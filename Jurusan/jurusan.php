@@ -14,7 +14,7 @@ require '../function.php';
 // $halaman = ceil($data / $jmldata);
 
 
-$mhs = query("SELECT * FROM data_jurusan ");
+$jurusan = query("SELECT * FROM data_jurusan ");
 function search($keyword)
 {
     $query = "SELECT * FROM data_jurusan WHERE nama_jurusan LIKE '%" . $keyword . "%'";
@@ -22,7 +22,7 @@ function search($keyword)
 }
 
 if (isset($_POST["cari"])) {
-    $mhs = search($_POST["keyword"]);
+    $jurusan = search($_POST["keyword"]);
 }
 ?>
 
@@ -77,7 +77,7 @@ if (isset($_POST["cari"])) {
 
                     <?php
                     $i = 1;
-                    foreach ($mhs as $row) :
+                    foreach ($jurusan as $row) :
                     ?>
                         <tr>
                             <td>
