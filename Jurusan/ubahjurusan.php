@@ -14,7 +14,7 @@ $jurusan = query("SELECT * FROM data_jurusan WHERE`kode_jurusan` = '$kode_jurusa
 
 if (isset($_POST["submit"])) {
 
-    if (update($_POST) > 0) {
+    if (updateJ($_POST) > 0) {
         echo "
             <script>
                 alert('data berhasil diubah');
@@ -53,7 +53,7 @@ if (isset($_POST["submit"])) {
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="../Jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
                 <li><a href="contact.html">Mata Kuliah</a></li>
                 <li><a href="about.html">Ruangan</a></li>
                 <li><a href="../logout.php">Logout</a></li>
@@ -76,7 +76,7 @@ if (isset($_POST["submit"])) {
                                 <option value="J03">Bisnis Digital</option>
                             </select><br>
                         </li>
-                        <button type=" submit" name="submit">Update Data</button>
+                        <button type="submit" name="submit">Update Data</button>
                     </ul>
 
 

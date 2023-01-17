@@ -124,11 +124,42 @@ function updateDsn($data)
     return mysqli_affected_rows($con);
 }
 
+function updateJ($data)
+{
+    global $con;
+    $kodeJ = htmlspecialchars($data['kode_jurusan']);
+    $namaJ =  htmlspecialchars($data['nama_jurusan']);
+
+    $query = "UPDATE data_mahasiswa SET 
+                `kode_jurusan` = '$kodeJ', 
+                `nama_jurusan` = '$namaJ'
+                WHERE `kode_jurusan` = '$kodeJ'
+                ";
+    mysqli_query($con, $query);
+
+    return mysqli_affected_rows($con);
+}
 
 function hapus($nim)
 {
     global $con;
     mysqli_query($con, "DELETE FROM data_mahasiswa WHERE `nim` = '$nim' ");
+
+    return mysqli_affected_rows($con);
+}
+
+function hapusD($nidn)
+{
+    global $con;
+    mysqli_query($con, "DELETE FROM data_dosen WHERE `nidn` = '$nidn' ");
+
+    return mysqli_affected_rows($con);
+}
+
+function hapusJ($kode_jurusan)
+{
+    global $con;
+    mysqli_query($con, "DELETE FROM data_jurusan WHERE `kode_jurusan` = '$kode_jurusan' ");
 
     return mysqli_affected_rows($con);
 }

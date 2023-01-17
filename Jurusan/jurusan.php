@@ -14,7 +14,7 @@ require '../function.php';
 // $halaman = ceil($data / $jmldata);
 
 
-$mhs = query("SELECT * FROM data_jurusan ");
+$jurusan = query("SELECT * FROM data_jurusan ");
 function search($keyword)
 {
     $query = "SELECT * FROM data_jurusan WHERE nama_jurusan LIKE '%" . $keyword . "%'";
@@ -22,7 +22,7 @@ function search($keyword)
 }
 
 if (isset($_POST["cari"])) {
-    $mhs = search($_POST["keyword"]);
+    $jurusan = search($_POST["keyword"]);
 }
 ?>
 
@@ -47,8 +47,8 @@ if (isset($_POST["cari"])) {
             <ul>
                 <li><a href="../index.php">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="../Jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="mahasiswa.php">Mahasiswa</a></li>
+                <li><a class="active" href="../jurusan/jurusan.php">Jurusan</a></li>
                 <li><a href="contact.html">Mata Kuliah</a></li>
                 <li><a href="about.html">Ruangan</a></li>
                 <li><a href="../logout.php">Logout</a></li>
@@ -70,14 +70,16 @@ if (isset($_POST["cari"])) {
 
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
+                        <th>No</th>
                         <th>Kode_Jurusan</th>
                         <th>Nama_Jurusan</th>
-                     
+                        <th>Aksi</th>
+
                     </tr>
 
                     <?php
                     $i = 1;
-                    foreach ($mhs as $row) :
+                    foreach ($jurusan as $row) :
                     ?>
                         <tr>
                             <td>
@@ -89,7 +91,7 @@ if (isset($_POST["cari"])) {
                             <td>
                                 <?= $row["nama_jurusan"]; ?>
                             </td>
-                            
+
                             <td>
                                 <a href="ubahjurusan.php?nim=<?= $row["nim"]; ?>">Ubah</a>
                                 <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
