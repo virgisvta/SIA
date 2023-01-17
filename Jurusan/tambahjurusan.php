@@ -9,7 +9,7 @@ require '../function.php';
 
 if (isset($_POST["submit"])) {
 
-    if (tambahMhs($_POST) > 0) {
+    if (tambahJrs($_POST) > 0) {
         echo "<script>
                 alert('data berhasil ditambahkan');
                 document.location.href = 'jurusan.php';
@@ -38,18 +38,15 @@ if (isset($_POST["submit"])) {
     <h1> Tambah Data Jurusan</h1>
     <form action="" method="POST">
         <ul>
+
+            <li>
+                <label for="kode_jurusan">Kode Jurusan :</label> <br>
+                <input type="text" name="kode_jurusan" id="kode_jurusan">
             </li>
             <li>
-                <label for="nama_Jurusan">Nama Jurusan :</label> <br>
+                <label for="nama_jurusan">Nama Jurusan :</label><br>
                 <input type="text" name="nama_jurusan" id="nama_jurusan">
             </li>
-            <li>
-                <label>Kode Jurusan :</label><br>
-                <select name="kode_jurusan">
-                    <option value="J01">Sistem Komputer</option>
-                    <option value="J02">Sistem Informasi</option>
-                    <option value="J03">Bisnis Digital</option>
-                </select>
             <button type="submit" name="submit">Tambah Data</button>
         </ul>
 

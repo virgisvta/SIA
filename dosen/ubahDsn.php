@@ -14,7 +14,7 @@ $dosen = query("SELECT * FROM data_dosen WHERE`nidn` = '$nidn'")[0];
 
 if (isset($_POST["submit"])) {
 
-    if (update($_POST) > 0) {
+    if (updateDsn($_POST) > 0) {
         echo "
             <script>
                 alert('data berhasil diubah');

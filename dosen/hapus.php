@@ -9,7 +9,7 @@ require '../function.php';
 
 $nidn = $_GET['nidn'];
 
-if (hapus($nidn) > 0) {
+if (hapusD($nidn) > 0) {
     echo "
     <script>
         alert('data berhasil dihapus');

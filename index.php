@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["masuk"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+require "function.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +30,7 @@
                 <li><a class="active" href="index.html">Dashboard</a></li>
                 <li><a href="dosen/dosen.php">Dosen</a></li>
                 <li><a href="mahasiswa/mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="work.html">Jurusan</a></li>
+                <li><a href="jurusan/jurusan.php">Jurusan</a></li>
                 <li><a href="contact.html">Mata Kuliah</a></li>
                 <li><a href="about.html">Ruangan</a></li>
                 <li><a href="logout.php">Logout</a></li>
