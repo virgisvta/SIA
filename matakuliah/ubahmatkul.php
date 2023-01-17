@@ -12,23 +12,23 @@ $nim = $_GET["nim"];
 $mhs = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
 // var_dump($mhs);
 
-if (isset($_POST["submit"])) {
+// if (isset($_POST["submit"])) {
 
-    if (update($_POST) > 0) {
-        echo "
-            <script>
-                alert('data berhasil diubah');
-                document.location.href = 'mahasiswa.php';
-            </script>
-        ";
-    } else {
-        // echo mysqli_error($con);
-        echo "<script>
-        alert('data gagal diubah');
-        document.location.href = 'mahasiswa.php';
-        </script>";
-    }
-}
+//     if (update($_POST) > 0) {
+//         echo "
+//             <script>
+//                 alert('data berhasil diubah');
+//                 document.location.href = 'mahasiswa.php';
+//             </script>
+//         ";
+//     } else {
+//         // echo mysqli_error($con);
+//         echo "<script>
+//         alert('data gagal diubah');
+//         document.location.href = 'mahasiswa.php';
+//         </script>";
+//     }
+// }
 
 ?>
 <!DOCTYPE html>

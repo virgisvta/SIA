@@ -14,15 +14,15 @@ require '../function.php';
 // $halaman = ceil($data / $jmldata);
 
 
-$mhs = query("SELECT * FROM data_mahasiswa ");
+$matakuliah = query("SELECT * FROM mata_kuliah ");
 function search($keyword)
 {
-    $query = "SELECT * FROM data_mahasiswa WHERE nama_mhs LIKE '%" . $keyword . "%'";
+    $query = "SELECT * FROM mata_kuliah WHERE mata_kuliah LIKE '%" . $keyword . "%'";
     return query($query);
 }
 
 if (isset($_POST["cari"])) {
-    $mhs = search($_POST["keyword"]);
+    $matakuliah = search($_POST["keyword"]);
 }
 ?>
 
@@ -49,36 +49,32 @@ if (isset($_POST["cari"])) {
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
                 <li><a href="work.html">Jurusan</a></li>
-                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
+                <li><a href="#">Mata Kuliah</a></li>
                 <li><a href="about.html">Ruangan</a></li>
                 <li><a href="../logout.php">Logout</a></li>
             </ul>
         </nav>
         <div class="row">
             <h1>
-                Daftar Mahasiswa
+                Daftar Matakuliah
             </h1>
 
-            <a href="tambahMhs.php">Tambah Data Mahasiswa</a>
+            <a href="tambahmatkul.php">Tambah Data Matakuliah</a>
             <br><br>
             <div class="column3">
                 <form action="" method="post">
 
-                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama mahasiswa" autocomplete="off">
+                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama matakuliah" autocomplete="off">
                     <button type="submit" name="cari"> Cari!</button>
                 </form> <br>
 
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
-                        <th>No</th>
-                        <th>NIM</th>
-                        <th>Nama</th>
-                        <th>Jurusan</th>
-                        <th>Gender</th>
-                        <th>Alamat</th>
-                        <th>No HP</th>
-                        <th>Email</th>
-                        <th>Aksi</th>
+                        <th>Id_Matakuliah</th>
+                        <th>Nama_Matakuliah</th>
+                        <th>Dosen_Matakuliah</th>
+                        <th>Waktu</th>
+                        <th>Hari</th>
                     </tr>
 
                     <?php
@@ -90,28 +86,22 @@ if (isset($_POST["cari"])) {
                                 <?= $i++ ?>
                             </td>
                             <td>
-                                <?= $row["nim"]; ?>
+                                <?= $row["Id_Matakuliah"]; ?>
                             </td>
                             <td>
-                                <?= $row["nama_mhs"]; ?>
+                                <?= $row["Nama_Matakuliah"]; ?>
                             </td>
                             <td>
-                                <?= $row["kode_jurusan"]; ?>
+                                <?= $row["Dosen_Matakuliah"]; ?>
                             </td>
                             <td>
-                                <?= $row["gender"]; ?>
+                                <?= $row["waktu"]; ?>
                             </td>
                             <td>
-                                <?= $row["alamat"]; ?>
+                                <?= $row["hari"]; ?>
                             </td>
                             <td>
-                                <?= $row["no_hp"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["email"]; ?>
-                            </td>
-                            <td>
-                                <a href="ubahMhs.php?nim=<?= $row["nim"]; ?>">Ubah</a>
+                                <a href="ubahmatkul.php?nim=<?= $row["nim"]; ?>">Ubah</a>
                                 <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
                             </td>
                         </tr>
