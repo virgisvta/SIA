@@ -48,7 +48,7 @@ if (isset($_POST["cari"])) {
                 <li><a href="../index.php">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="work.html">Jurusan</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
                 <li><a href="contact.html">Mata Kuliah</a></li>
                 <li><a href="about.html">Ruangan</a></li>
                 <li><a href="../logout.php">Logout</a></li>
