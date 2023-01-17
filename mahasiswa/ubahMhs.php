@@ -14,7 +14,7 @@ $mhs = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
 
 if (isset($_POST["submit"])) {
 
-    if (update($_POST) > 0) {
+    if (updateMhs($_POST) > 0) {
         echo "
             <script>
                 alert('data berhasil diubah');

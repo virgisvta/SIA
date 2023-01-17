@@ -46,8 +46,35 @@ function tambahDsn($data)
     return mysqli_affected_rows($con);
 }
 
+function tambahJrs($data)
+{
+    global $con;
+    $kodej = htmlspecialchars($data['kode_jurusan']);
+    $namaj =  htmlspecialchars($data['nama_jurusan']);
 
-function update($data)
+    $query = "INSERT INTO data_jurusan (`kode_jurusan`, `nama_jurusan`) VALUES ('$kodej','$namaj')";
+    mysqli_query($con, $query);
+
+    return mysqli_affected_rows($con);
+}
+
+function tambahMatkul($data)
+{
+    global $con;
+    $id = htmlspecialchars($data['id_matakuliah']);
+    $nama_matkul =  htmlspecialchars($data['nama_matakuliah']);
+    $dosen = htmlspecialchars($data['dosen_matakuliah']);
+    $waktu =  htmlspecialchars($data['waktu']);
+    $hari = htmlspecialchars($data['hari']);
+
+    $query = "INSERT INTO data_mahasiswa (`id`, `nama_matakuliah`, `dosen_matakuliah`, `waktu`, `hari`) VALUES ('$id','$nama_matkul','$dosen','$waktu','$hari')";
+    mysqli_query($con, $query);
+
+    return mysqli_affected_rows($con);
+}
+
+
+function updateMhs($data)
 {
     global $con;
     $nim = htmlspecialchars($data['nim']);
@@ -62,6 +89,30 @@ function update($data)
                 `nim` = '$nim', 
                 `nama_mhs` = '$nama', 
                 `kode_jurusan` = '$kode_jurusan', 
+                `gender` = $gender, 
+                `alamat` = '$alamat', 
+                `no_hp` = '$no_hp', 
+                `email` = '$email'
+                WHERE `nim` = '$nim'
+                ";
+    mysqli_query($con, $query);
+
+    return mysqli_affected_rows($con);
+}
+
+function updateDsn($data)
+{
+    global $con;
+    $nim = htmlspecialchars($data['nidn']);
+    $nama =  htmlspecialchars($data['nama_dsn']);
+    $gender = htmlspecialchars($data['gender']);
+    $alamat =  htmlspecialchars($data['alamat']);
+    $no_hp =  htmlspecialchars($data['no_hp']);
+    $email = htmlspecialchars($data['email']);
+
+    $query = "UPDATE data_mahasiswa SET 
+                `nim` = '$nim', 
+                `nama_dsn` = '$nama',  
                 `gender` = $gender, 
                 `alamat` = '$alamat', 
                 `no_hp` = '$no_hp', 

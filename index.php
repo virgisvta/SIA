@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["masuk"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+require "function.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
