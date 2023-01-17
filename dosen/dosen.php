@@ -41,11 +41,10 @@ if (isset($_POST["cari"])) {
         <nav>
             <ul>
                 <li><a href="../index.php">Dashboard</a></li>
-                <li><a class="active" href="dosen/dosen.php">Dosen</a></li>
+                <li><a class="active" href="#">Dosen</a></li>
                 <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="work.html">Jurusan</a></li>
-                <li><a href="contact.html">Mata Kuliah</a></li>
-                <li><a href="about.html">Ruangan</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
                 <li><a href="../logout.php">Logout</a></li>
             </ul>
         </nav>

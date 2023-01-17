@@ -9,18 +9,16 @@ require '../function.php';
 
 $kode_jurusan = $_GET["kode_jurusan"];
 
-$jurusan = query("SELECT * FROM data_jurusan WHERE`kode_jurusan` = '$kode_jurusan")[0];
-// var_dump($mhs);
+$jurusan = query("SELECT * FROM data_jurusan WHERE `kode_jurusan` = '$kode_jurusan'");
+// var_dump($jurusan);
 
 if (isset($_POST["submit"])) {
 
     if (updateJ($_POST) > 0) {
-        echo "
-            <script>
+        echo "<script>
                 alert('data berhasil diubah');
                 document.location.href = 'jurusan.php';
-            </script>
-        ";
+            </script>";
     } else {
         // echo mysqli_error($con);
         echo "<script>
@@ -65,17 +63,14 @@ if (isset($_POST["submit"])) {
                 <form action="" method="POST">
                     <ul>
                         <li>
+                            <label>Kode Jurusan :</label><br>
+                            <input type="text" name="kode_jurusan" id="kode_jurusan" value="<?= $jurusan["kode_jurusan"]; ?>"><br>
+                        </li>
+                        <li>
                             <label for="nama_jurusan">Nama Jurusan :</label> <br>
                             <input type="text" name="nama_jurusan" id="nama_jurusan" value="<?= $jurusan["nama_jurusan"]; ?>">
                         </li>
-                        <li>
-                            <label>Kode Jurusan :</label><br>
-                            <select name="kode_jurusan">
-                                <option value="J01">Sistem Komputer</option>
-                                <option value="J02">Sistem Informasi</option>
-                                <option value="J03">Bisnis Digital</option>
-                            </select><br>
-                        </li>
+
                         <button type="submit" name="submit">Update Data</button>
                     </ul>
 

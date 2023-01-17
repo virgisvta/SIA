@@ -9,7 +9,7 @@ require '../function.php';
 
 $nim = $_GET["nim"];
 
-$mhs = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
+$matkul = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
 // var_dump($mhs);
 
 // if (isset($_POST["submit"])) {
@@ -53,9 +53,8 @@ $mhs = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="work.html">Jurusan</a></li>
-                <li><a href="contact.html">Mata Kuliah</a></li>
-                <li><a href="about.html">Ruangan</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
                 <li><a href="../logout.php">Logout</a></li>
             </ul>
         </nav>

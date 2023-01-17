@@ -47,10 +47,9 @@ if (isset($_POST["cari"])) {
             <ul>
                 <li><a href="../index.php">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a class="active" href="../jurusan/jurusan.php">Jurusan</a></li>
-                <li><a href="contact.html">Mata Kuliah</a></li>
-                <li><a href="about.html">Ruangan</a></li>
+                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a class="active" href="#">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
                 <li><a href="../logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -93,8 +92,8 @@ if (isset($_POST["cari"])) {
                             </td>
 
                             <td>
-                                <a href="ubahjurusan.php?nim=<?= $row["nim"]; ?>">Ubah</a>
-                                <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                                <a href="ubahjurusan.php?kode_jurusan=<?= $row["kode_jurusan"]; ?>">Ubah</a>
+                                <a href="hapus.php?kode_jurusan=<?= $row["kode_jurusan"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

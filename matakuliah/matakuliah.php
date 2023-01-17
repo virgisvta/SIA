@@ -47,10 +47,9 @@ if (isset($_POST["cari"])) {
             <ul>
                 <li><a href="../index.php">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="work.html">Jurusan</a></li>
-                <li><a href="#">Mata Kuliah</a></li>
-                <li><a href="about.html">Ruangan</a></li>
+                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a class="active" href="#">Mata Kuliah</a></li>
                 <li><a href="../logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -79,20 +78,20 @@ if (isset($_POST["cari"])) {
 
                     <?php
                     $i = 1;
-                    foreach ($mhs as $row) :
+                    foreach ($matakuliah as $row) :
                     ?>
                         <tr>
                             <td>
                                 <?= $i++ ?>
                             </td>
                             <td>
-                                <?= $row["Id_Matakuliah"]; ?>
+                                <?= $row["id_matakuliah"]; ?>
                             </td>
                             <td>
-                                <?= $row["Nama_Matakuliah"]; ?>
+                                <?= $row["nama_matakuliah"]; ?>
                             </td>
                             <td>
-                                <?= $row["Dosen_Matakuliah"]; ?>
+                                <?= $row["dosen_matakuliah"]; ?>
                             </td>
                             <td>
                                 <?= $row["waktu"]; ?>
@@ -101,8 +100,8 @@ if (isset($_POST["cari"])) {
                                 <?= $row["hari"]; ?>
                             </td>
                             <td>
-                                <a href="ubahmatkul.php?nim=<?= $row["nim"]; ?>">Ubah</a>
-                                <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                                <a href="ubahmatkul.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>">Ubah</a>
+                                <a href="hapus.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
