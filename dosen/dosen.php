@@ -1,0 +1,121 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["masuk"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+require '../function.php';
+
+
+$dsn = query("SELECT * FROM data_dosen ");
+function search($keyword)
+{
+    $query = "SELECT * FROM data_dsn WHERE nama_dsn LIKE '%" . $keyword . "%'";
+    return query($query);
+}
+
+if (isset($_POST["cari"])) {
+    $dsn = search($_POST["keyword"]);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2 class="h2">Virgi's</h2>
+    </div>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Dashboard</a></li>
+                <li><a class="active" href="dosen/dosen.php">Dosen</a></li>
+                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a href="work.html">Jurusan</a></li>
+                <li><a href="contact.html">Mata Kuliah</a></li>
+                <li><a href="about.html">Ruangan</a></li>
+                <li><a href="../logout.php">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="row">
+            <h1>
+                Daftar Mahasiswa
+            </h1>
+
+            <a href="tambahDsn.php">Tambah Data Mahasiswa</a>
+            <br><br>
+            <div class="column3">
+                <form action="" method="post">
+
+                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama mahasiswa" autocomplete="off">
+                    <button type="submit" name="cari"> Cari!</button>
+                </form> <br>
+
+                <table border="1" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <th>No</th>
+                        <th>NIDN</th>
+                        <th>Nama</th>
+                        <th>Gender</th>
+                        <th>Alamat</th>
+                        <th>No HP</th>
+                        <th>Email</th>
+                        <th>Aksi</th>
+                    </tr>
+
+                    <?php
+                    $i = 1;
+                    foreach ($dsn as $row) :
+                    ?>
+                        <tr>
+                            <td>
+                                <?= $i++ ?>
+                            </td>
+                            <td>
+                                <?= $row["nidn"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["nama_dsn"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["gender"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["alamat"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["no_hp"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["email"]; ?>
+                            </td>
+                            <td>
+                                <a href="ubahDsn.php?nidn=<?= $row["nidn"]; ?>">Ubah</a>
+                                <a href="hapus.php?nidn=<?= $row["nidn"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; Virgi Savita 2022</p>
+    </footer>
+
+</body>
+
+</html>
