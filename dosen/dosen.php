@@ -50,15 +50,15 @@ if (isset($_POST["cari"])) {
         </nav>
         <div class="row">
             <h1>
-                Daftar Mahasiswa
+                Daftar Dosen
             </h1>
 
-            <a href="tambahDsn.php">Tambah Data Mahasiswa</a>
+            <a href="tambahDsn.php">Tambah Data Dosen</a>
             <br><br>
             <div class="column3">
                 <form action="" method="post">
 
-                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama mahasiswa" autocomplete="off">
+                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama dosen" autocomplete="off">
                     <button type="submit" name="cari"> Cari!</button>
                 </form> <br>
 
@@ -112,7 +112,7 @@ if (isset($_POST["cari"])) {
     </section>
 
     <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
+        <p>Copyright &copy; 2022</p>
     </footer>
 
 </body>
