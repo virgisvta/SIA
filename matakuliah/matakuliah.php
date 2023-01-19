@@ -10,19 +10,19 @@ require '../function.php';
 
 //pagination
 // $jmldata = 2;
-// $data = count(query("SELECT * FROM data_jurusan"));
+// $data = count(query("SELECT * FROM data_mahasiswa"));
 // $halaman = ceil($data / $jmldata);
 
 
-$jurusan = query("SELECT * FROM data_jurusan ");
+$matakuliah = query("SELECT * FROM mata_kuliah ");
 function search($keyword)
 {
-    $query = "SELECT * FROM data_jurusan WHERE nama_jurusan LIKE '%" . $keyword . "%'";
+    $query = "SELECT * FROM mata_kuliah WHERE mata_kuliah LIKE '%" . $keyword . "%'";
     return query($query);
 }
 
 if (isset($_POST["cari"])) {
-    $jurusan = search($_POST["keyword"]);
+    $matakuliah = search($_POST["keyword"]);
 }
 ?>
 
@@ -48,52 +48,60 @@ if (isset($_POST["cari"])) {
                 <li><a href="../index.php">Dashboard</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
-                <li><a class="active" href="#">Jurusan</a></li>
-                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a class="active" href="#">Mata Kuliah</a></li>
                 <li><a href="../logout.php">Logout</a></li>
             </ul>
         </nav>
         <div class="row">
             <h1>
-                Daftar Jurusan
+                Daftar Matakuliah
             </h1>
 
-            <a href="tambahjurusan.php">Tambah Data Jurusan</a>
+            <a href="tambahmatkul.php">Tambah Data Matakuliah</a>
             <br><br>
             <div class="column3">
                 <form action="" method="post">
 
-                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama jurusan" autocomplete="off">
+                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama matakuliah" autocomplete="off">
                     <button type="submit" name="cari"> Cari!</button>
                 </form> <br>
 
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
-                        <th>No</th>
-                        <th>Kode_Jurusan</th>
-                        <th>Nama_Jurusan</th>
-                        <th>Aksi</th>
-
+                        <th>Id_Matakuliah</th>
+                        <th>Nama_Matakuliah</th>
+                        <th>Dosen_Matakuliah</th>
+                        <th>Waktu</th>
+                        <th>Hari</th>
                     </tr>
 
                     <?php
                     $i = 1;
-                    foreach ($jurusan as $row) :
+                    foreach ($matakuliah as $row) :
                     ?>
                         <tr>
                             <td>
                                 <?= $i++ ?>
                             </td>
                             <td>
-                                <?= $row["kode_jurusan"]; ?>
+                                <?= $row["id_matakuliah"]; ?>
                             </td>
                             <td>
-                                <?= $row["nama_jurusan"]; ?>
+                                <?= $row["nama_matakuliah"]; ?>
                             </td>
-
                             <td>
-                                <a href="ubahjurusan.php?kode_jurusan=<?= $row["kode_jurusan"]; ?>">Ubah</a>
-                                <a href="hapus.php?kode_jurusan=<?= $row["kode_jurusan"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                                <?= $row["dosen_matakuliah"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["waktu"]; ?>
+                            </td>
+                            <td>
+                                <?= $row["hari"]; ?>
+                            </td>
+                            <td>
+                                <a href="ubahmatkul.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>">Ubah</a>
+                                <a href="hapus.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

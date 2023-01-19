@@ -130,7 +130,7 @@ function updateJ($data)
     $kodeJ = htmlspecialchars($data['kode_jurusan']);
     $namaJ =  htmlspecialchars($data['nama_jurusan']);
 
-    $query = "UPDATE data_mahasiswa SET 
+    $query = "UPDATE data_jurusan SET 
                 `kode_jurusan` = '$kodeJ', 
                 `nama_jurusan` = '$namaJ'
                 WHERE `kode_jurusan` = '$kodeJ'
