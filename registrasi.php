@@ -22,6 +22,7 @@ if (isset($_POST["register"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Registrasi</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         label {
             display: block;
@@ -30,30 +31,44 @@ if (isset($_POST["register"])) {
 </head>
 
 <body>
-    <h1>Halaman Registrasi</h1>
+    <div class="center">
+
+   
+    <h1>Registration Page</h1>
     <form action="" method="POST">
-        <ul>
-            <li>
+        <div class="txt_field">
+
+      
+        <!-- <ul>
+            <li> -->
                 <label for="email">Email :</label>
                 <input type="email" name="email" id="email">
-            </li>
-            <li>
+                </div>
+            <!-- </li>
+            <li> -->
+                <div class="txt_field">
                 <label for="nama">Nama :</label>
                 <input type="nama" name="nama" id="nama">
-            </li>
-            <li>
+                </div>
+            <!-- </li>
+            <li> -->
+                <div class="txt_field">
                 <label for="password">Password :</label>
                 <input type="password" name="password" id="password">
-            </li>
-            <li>
+                </div>
+            <!-- </li>
+            <li> -->
+                <div class="txt_field">
                 <label for="password2">Konfirmasi Password :</label>
                 <input type="password" name="password2" id="password2">
-            </li> <br>
-            <li>
-                <button type="submit" name="register">Register</button>
-            </li>
-        </ul>
+                </div>
+            <!-- </li> <br> -->
+            <!-- <li> -->
+                <button type="submit" name="register" class="button">Register</button>
+            <!-- </li>
+        </ul> -->
     </form>
+    </div>
 </body>
 
 </html>

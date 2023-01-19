@@ -21,7 +21,7 @@ require "function.php"
 
 <body>
     <div class="header">
-        <h2 class="h2">Virgi's</h2>
+        <h2 class="h2">SKEMA</h2>
     </div>
 
     <section>
@@ -41,8 +41,8 @@ require "function.php"
                 <img src="assets/home.jpeg" alt="image" class="img" style="margin-left:30%; margin-top: 10%;">
             </div> -->
             <div class="column3">
-                <h1 style="font-size: 20pt; padding-top: 60px"> Hallo, saya Virgi Savita</h1>
-                <hr style="width: 30%; border: 2px solid #555; text-align:left;margin-left:0">
+                <h1 style="font-size: 20pt; padding-top: 60px; margin-left:19%"> Hallo goblok</h1>
+                <hr style="width: 30%; border: 2px solid #555; text-align:left;margin-left:15%">
                 <p id="demo"></p>
                 <button class="btn1" onclick="btn()">More Info</button>
             </div>

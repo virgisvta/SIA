@@ -34,39 +34,50 @@ if (isset($_POST["masuk"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-    <style>
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <style>
         label {
             display: block;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
+     <div class="center">
 
-
-    <h1>Halaman Login</h1>
+    <h1> Login Page</h1>
     <?php
     if (isset($error)) : ?>
-        <p style="color: red; font-style: italic;"> email/password salah </p>
+        <p class="alert"> Incorrect email or password </p>
     <?php endif;
     ?>
 
     <form action="" method="POST">
-        <ul>
-            <li>
-                <label for="email">Email :</label>
+        <div class="txt_field">
+      
+                <label for="email">Input your email</label>
                 <input type="email" name="email" id="email">
-            </li>
-            <li>
-                <label for="password">Password :</label>
+                </div>
+         
+
+        <div class="txt_field">
+                <label for="password" >Input your password </label>
                 <input type="password" name="password" id="password">
-            </li>
-            <li>
-                <button type="submit" name="masuk">Login</button>
-            </li>
-        </ul>
+        </div>
+            
+                <button type="submit" name="masuk" class="button">Login</button>
+                
+<br>
+<br>
+                <a href="registrasi.php">
+                 <button a href= "registrasi.php" "type="submit" name ="regis" class="button"> Sign Up </button>
+                </a>
+           
+      
+
     </form>
+    
+    </div> 
 </body>
 
 </html>
