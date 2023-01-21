@@ -1,10 +1,10 @@
 <?php
-// session_start();
+session_start();
 
-// if (isset($_SESSION["masuk"])) {
-//     header("Location: index.php");
-//     exit;
-// }
+if (isset($_SESSION["masuk"])) {
+    header("Location: index.php");
+    exit;
+}
 require "function.php";
 
 if (isset($_POST["masuk"])) {
@@ -49,12 +49,10 @@ if (isset($_POST["masuk"])) {
 
         <form action="" method="POST">
             <div class="txt_field">
-
                 <label for="email">Input your email</label>
                 <input type="email" name="email" id="email">
             </div>
-
-
+            
             <div class="txt_field">
                 <label for="password">Input your password </label>
                 <input type="password" name="password" id="password">
