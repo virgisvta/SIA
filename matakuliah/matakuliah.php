@@ -52,7 +52,7 @@ var_dump($matakuliah);
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
     </header>
-    <div class="row">
+    <div class="cntr">
         <h1>
             Daftar Matakuliah
         </h1>
