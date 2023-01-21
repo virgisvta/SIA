@@ -39,48 +39,44 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <h2 class="h2">Virgi's</h2>
-    </div>
-
-    <section>
+    <header>
+        <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
+            <ul class="nav_links">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#">Mahasiswa</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="work.html">Jurusan</a></li>
-                <li><a href="contact.html">Mata Kuliah</a></li>
-                <li><a href="about.html">Ruangan</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
+        <a href="../logout.php"><button class="btn2">Logout</button></a>
+    </header>
+    <h1 class="position-absolute top-30 start-50 translate-middle"> Tambah Data Dosen</h1>
+    <div class="container">
         <div class="row">
-            <div class="column3">
-                <h1> Update Data Mahasiswa</h1>
-                <form action="" method="POST">
-                    <ul>
-                        <li>
+            <div class="col">
+                <form action="" method="POST" class="position-absolute top-80 start-30 translate-middle">
+                    <div class="form-control"><!-- <div class="container"> -->
+                        <ul>
                             <label for="nim">NIM :</label><br>
-                            <input type="number" name="nim" id="nim" required value="<?= $mhs["nim"];  ?>" readonly>
-                        </li>
-                        <li>
+                            <input type="number" name="nim" id="nim" required value="<?= $mhs["nim"];  ?>" readonly> <br>
                             <label for="nama_mhs">Nama :</label> <br>
                             <input type="text" name="nama_mhs" id="nama_mhs" value="<?= $mhs["nama_mhs"]; ?>">
-                        </li>
-                        <li>
+                            <br>
                             <label>Kode Jurusan :</label><br>
                             <select name="kode_jurusan">
                                 <option value="J01">Sistem Komputer</option>
                                 <option value="J02">Sistem Informasi</option>
                                 <option value="J03">Bisnis Digital</option>
                             </select><br>
-                        </li>
-                        <li>
+
                             <label>Gender :</label><br>
                             <?php
                             if ($mhs['gender'] == 0) {
@@ -91,32 +87,31 @@ if (isset($_POST["submit"])) {
                                 <input type="radio" name="gender" value="0"> Perempuan
                                 <input type="radio" name="gender" value="1" checked> Laki-laki
                             <?php } ?>
-                        </li>
-                        <li>
+                            <br>
                             <label for="alamat">Alamat :</label><br>
                             <input type="text" name="alamat" id="alamat" value="<?= $mhs["alamat"]; ?>">
-                        </li>
-                        <li>
+                            <br>
                             <label for=" no_hp">No HP :</label><br>
                             <input type="number" name="no_hp" id="no_hp" value="<?= $mhs["no_hp"]; ?>">
-                        </li>
-                        <li>
+                            <br>
                             <label for=" email">Email :</label><br>
                             <input type="email" name="email" id="email" value="<?= $mhs["email"]; ?>">
-                        </li>
-                        <br>
-                        <button type=" submit" name="submit">Update Data</button>
-                    </ul>
+                            <br><br>
+                            <button type="submit" name="submit" class="btn btn-dark">Update Data</button>
+                        </ul>
 
 
                 </form>
             </div>
+            <div class="col position-absolute top-70 start-30 translate-middle">
+                Column2
+            </div>
+            <!-- <div class="col">
+      Column
+    </div> -->
         </div>
-    </section>
-
-    <footer>
-        <p>Copyright &copy; 2022</p>
-    </footer>
+    </div>
+    </div>
 
 </body>
 

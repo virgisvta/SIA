@@ -144,6 +144,7 @@ function updateMatkul($matkul)
     global $con;
 
     $id =  htmlspecialchars($matkul['id_matkul']);
+
     $nama_matkul = htmlspecialchars($matkul['nama_matkul']);
     $nidn =  htmlspecialchars($matkul['nidn']);
     $waktu = htmlspecialchars($matkul['waktu']);

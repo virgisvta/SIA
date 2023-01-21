@@ -29,11 +29,32 @@ if (isset($_POST["cari"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<header>
+    <!-- <header>
+    <div class="header">
+        <h2 class="h2">Virgi's</h2>
+    </div>
+
+    <section>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="../index.php">Dashboard</a></li>
+                <li><a class="active" href="#">Dosen</a></li>
+                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
+                <li><a href="../logout.php">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="row">
+    </header> -->
+    <header>
         <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
             <ul class="nav_links">
@@ -46,8 +67,7 @@ if (isset($_POST["cari"])) {
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
     </header>
-        <div class="cntr">
-            <h1>
+            <!-- <h1>
                 Daftar Dosen
             </h1>
 
@@ -58,8 +78,20 @@ if (isset($_POST["cari"])) {
 
                     <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama dosen" autocomplete="off">
                     <button type="submit" name="cari"> Cari!</button>
-                </form> <br>
-
+                </form> <br> -->
+                <div class="cntr">
+        <h1 class="position-absolute top-30 start-50 translate-middle">
+            Daftar Dosen
+        </h1>
+        <div class="container position-absolute top-50 start-50 translate-middle">
+        <!-- <div class="container"> -->
+        <a href="tambahDsn.php">Tambah Data Dosen</a>
+        <form action="" method="post">
+            <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama dosen" autocomplete="off">
+            <button type="submit" name="cari"> Cari!</button>
+        </form> <br>
+        <!-- </div> -->
+<div class="form-action">
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
                         <th>No</th>
@@ -104,12 +136,16 @@ if (isset($_POST["cari"])) {
                             </td>
                         </tr>
                     <?php endforeach; ?>
+                    </div>
                 </table>
             </div>
         </div>
     </section>
+    </div>
 
-
+    <!-- <footer>
+        <p>Copyright &copy; 2022</p>
+    </footer> -->
 
 </body>
 
