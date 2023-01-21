@@ -7,28 +7,28 @@ if (!isset($_SESSION["masuk"])) {
 }
 require '../function.php';
 
-$nim = $_GET["nim"];
+$id = $_GET["id_matakuliah"];
 
-$matkul = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
+$matkul = query("SELECT * FROM mata_kuliah WHERE`id_matakuliah` = '$id'")[0];
 // var_dump($mhs);
 
-// if (isset($_POST["submit"])) {
+if (isset($_POST["submit"])) {
 
-//     if (update($_POST) > 0) {
-//         echo "
-//             <script>
-//                 alert('data berhasil diubah');
-//                 document.location.href = 'mahasiswa.php';
-//             </script>
-//         ";
-//     } else {
-//         // echo mysqli_error($con);
-//         echo "<script>
-//         alert('data gagal diubah');
-//         document.location.href = 'mahasiswa.php';
-//         </script>";
-//     }
-// }
+    if (updateMatkul($_POST) > 0) {
+        echo "
+            <script>
+                alert('data berhasil diubah');
+                document.location.href = 'matakuliah.php';
+            </script>
+        ";
+    } else {
+        echo mysqli_error($con);
+        // echo "<script>
+        // alert('data gagal diubah');
+        // document.location.href = 'matakuliah.php';
+        // </script>";
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -43,79 +43,59 @@ $matkul = query("SELECT * FROM data_mahasiswa WHERE`nim` = '$nim'")[0];
 </head>
 
 <body>
-    <div class="header">
-        <h2 class="h2">Virgi's</h2>
-    </div>
-
-    <section>
+    <header>
+        <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
-                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
-                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+            <ul class="nav_links">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#">Mahasiswa</a></li>
+                <li><a href="#">Dosen</a></li>
+                <li><a href="#">Jurusan</a></li>
+                <li><a href="#">Matakuliah</a></li>
             </ul>
         </nav>
-        <div class="row">
-            <div class="column3">
-                <h1> Update Data Mahasiswa</h1>
-                <form action="" method="POST">
-                    <ul>
-                        <li>
-                            <label for="nim">NIM :</label><br>
-                            <input type="number" name="nim" id="nim" required value="<?= $mhs["nim"];  ?>" readonly>
-                        </li>
-                        <li>
-                            <label for="nama_mhs">Nama :</label> <br>
-                            <input type="text" name="nama_mhs" id="nama_mhs" value="<?= $mhs["nama_mhs"]; ?>">
-                        </li>
-                        <li>
-                            <label>Kode Jurusan :</label><br>
-                            <select name="kode_jurusan">
-                                <option value="J01">Sistem Komputer</option>
-                                <option value="J02">Sistem Informasi</option>
-                                <option value="J03">Bisnis Digital</option>
-                            </select><br>
-                        </li>
-                        <li>
-                            <label>Gender :</label><br>
-                            <?php
-                            if ($mhs['gender'] == 0) {
-                            ?>
-                                <input type="radio" name="gender" value="0" checked> Perempuan
-                                <input type="radio" name="gender" value="1"> Laki-laki
-                            <?php } else { ?>
-                                <input type="radio" name="gender" value="0"> Perempuan
-                                <input type="radio" name="gender" value="1" checked> Laki-laki
-                            <?php } ?>
-                        </li>
-                        <li>
-                            <label for="alamat">Alamat :</label><br>
-                            <input type="text" name="alamat" id="alamat" value="<?= $mhs["alamat"]; ?>">
-                        </li>
-                        <li>
-                            <label for=" no_hp">No HP :</label><br>
-                            <input type="number" name="no_hp" id="no_hp" value="<?= $mhs["no_hp"]; ?>">
-                        </li>
-                        <li>
-                            <label for=" email">Email :</label><br>
-                            <input type="email" name="email" id="email" value="<?= $mhs["email"]; ?>">
-                        </li>
-                        <br>
-                        <button type=" submit" name="submit">Update Data</button>
-                    </ul>
+        <a href="#"><button class="btn2">Logout</button></a>
+    </header>
+    <div class="cntr">
+        <h1> Update Data Mahasiswa</h1>
+        <form action="" method="POST">
+            <ul>
+                <li>
+                    <label for="matkul">Nama Matakuliah :</label><br>
+                    <input type="text" name="matkul" id="matkul" value="<?= $matkul["nama_matakuliah"];  ?>">
+                </li>
+                <li>
+                    <label for="nidn">NIDN :</label> <br>
+                    <input type="text" name="nidn" id="nidn" value="<?= $matkul["nidn"]; ?>">
+                </li>
+                <li>
+                    <label for="waktu">Waktu :</label><br>
+                    <input type="time" name="waktu" id="waktu" value="<?= $matkul["waktu"]; ?>">
+                </li>
+                <li>
+                    <label>Hari :</label><br>
+                    <select name="hari">
+                        <option value="Senin">Senin</option>
+                        <option value="Selasa">Selasa</option>
+                        <option value="Rabu">Rabu</option>
+                        <option value="Kamis">Kamis</option>
+                        <option value="Jumat">Jumat</option>
+                        <option value="Sabtu">Sabtu</option>
+                    </select><br>
+                </li>
+                <br><br>
+                <button type=" submit" name="submit">Update Data</button>
+            </ul>
 
 
-                </form>
-            </div>
-        </div>
+        </form>
+    </div>
+    </div>
     </section>
 
-    <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
-    </footer>
+    <!-- <footer> -->
+    <!-- <p>Copyright &copy; 2022</p>
+    </footer> -->
 
 </body>
 

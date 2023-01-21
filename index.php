@@ -20,38 +20,24 @@ require "function.php"
 </head>
 
 <body>
-    <div class="header">
-        <h2 class="h2">SKEMA</h2>
-    </div>
-
-    <section>
+    <header>
+        <img class="logo" src="assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a class="active" href="#">Dashboard</a></li>
-                <li><a href="dosen/dosen.php">Dosen</a></li>
+            <ul class="nav_links">
+                <li><a href="#">Home</a></li>
                 <li><a href="mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a href="dosen/dosen.php">Dosen</a></li>
                 <li><a href="jurusan/jurusan.php">Jurusan</a></li>
-                <li><a href="matakuliah/matakuliah.php">Mata Kuliah</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
-        <div class="row">
-            <!-- <div class="column2">
-                <img src="assets/home.jpeg" alt="image" class="img" style="margin-left:30%; margin-top: 10%;">
-            </div> -->
-            <div class="column3">
-                <h1 style="font-size: 20pt; padding-top: 60px; margin-left:19%"> Hallo goblok</h1>
-                <hr style="width: 30%; border: 2px solid #555; text-align:left;margin-left:15%">
-                <p id="demo"></p>
-                <button class="btn1" onclick="btn()">More Info</button>
-            </div>
-        </div>
-    </section>
+        <a href="logout.php"><button class="btn2">Logout</button></a>
+    </header>
 
-    <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
-    </footer>
-
+    <div class="center">
+        <h1>Welcome to SKEMA !</h1>
+        <p style="font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi porro ut quisquam. Enim non iure omnis, voluptas ea possimus. Molestias quidem qui, blanditiis culpa vero accusantium at. Ducimus, odit.</p>
+    </div>
 </body>
 
 </html>

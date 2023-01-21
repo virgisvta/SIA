@@ -7,10 +7,9 @@ if (!isset($_SESSION["masuk"])) {
 }
 require '../function.php';
 
-$kode_jurusan = $_GET["kode_jurusan"];
+$kodeJ = $_GET["kode_jurusan"];
 
-$jurusan = query("SELECT * FROM data_jurusan WHERE `kode_jurusan` = '$kode_jurusan'");
-// var_dump($jurusan);
+$jurusan = query("SELECT * FROM data_jurusan WHERE `kode_jurusan` = '$kodeJ'")[0];
 
 if (isset($_POST["submit"])) {
 
@@ -20,11 +19,11 @@ if (isset($_POST["submit"])) {
                 document.location.href = 'jurusan.php';
             </script>";
     } else {
-        // echo mysqli_error($con);
-        echo "<script>
-        alert('data gagal diubah');
-        document.location.href = 'jurusan.php';
-        </script>";
+        echo mysqli_error($con);
+        // echo "<script>
+        // alert('data gagal diubah');
+        // document.location.href = 'jurusan.php';
+        // </script>";
     }
 }
 
@@ -63,8 +62,8 @@ if (isset($_POST["submit"])) {
                 <form action="" method="POST">
                     <ul>
                         <li>
-                            <label>Kode Jurusan :</label><br>
-                            <input type="text" name="kode_jurusan" id="kode_jurusan" value="<?= $jurusan["kode_jurusan"]; ?>"><br>
+                            <label for="kode_jurusan">Kode Jurusan :</label>
+                            <input type="text" name="kode_jurusan" id="kode_jurusan" value="<?= $jurusan["kode_jurusan"]; ?>" readonly>
                         </li>
                         <li>
                             <label for="nama_jurusan">Nama Jurusan :</label> <br>
@@ -81,7 +80,7 @@ if (isset($_POST["submit"])) {
     </section>
 
     <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
+        <p>Copyright &copy; 2022</p>
     </footer>
 
 </body>

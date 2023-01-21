@@ -39,24 +39,27 @@ if (isset($_POST["submit"])) {
     <form action="" method="POST">
         <ul>
             <li>
-                <label for="id_matakuliah">ID MATAKULIAH :</label><br>
-                <input type="number" name="id_matakuliah" id="id_matakuliah" required>
-            </li>
-            <li>
-                <label for="nama_matakuliah">NAMA MATAKULIAH :</label> <br>
+                <label for="nama_matakuliah">Nama Matakuliah:</label> <br>
                 <input type="text" name="nama_matakuliah" id="nama_matakuliah">
             </li>
             <li>
-                <label for="dosen_matakuliah">DOSEN MATAKULIAH :</label><br>
-                <input type="text" name="dosen_matakuliah" id="dosen_matakuliah">
+                <label for="nidn">NIDN Dosen Matakuliah :</label><br>
+                <input type="text" name="nidn" id="nidn">
             </li>
             <li>
-                <label for="waktu">WAKTU :</label><br>
-                <input type="number" name="waktu" id="waktu">
+                <label for="waktu">Waktu :</label><br>
+                <input type="time" name="waktu" id="waktu">
             </li>
             <li>
-                <label for="hari">HARI :</label><br>
-                <input type="text" name="hari" id="hari">
+                <label>Hari :</label><br>
+                <select name="hari">
+                    <option value="Senin">Senin</option>
+                    <option value="Selasa">Selasa</option>
+                    <option value="Rabu">Rabu</option>
+                    <option value="Kamis">Kamis</option>
+                    <option value="Jumat">Jumat</option>
+                    <option value="Sabtu">Sabtu</option>
+                </select><br>
             </li>
             <br>
             <button type="submit" name="submit">Tambah Data</button>

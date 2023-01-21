@@ -70,7 +70,7 @@ if (isset($_POST["submit"])) {
                         </li>
                         <li>
                             <label for="nama_dsn">Nama :</label> <br>
-                            <input type="text" name="nama_dsn" id="nama_dsn" value="<?= $dosen["nama_mhs"]; ?>">
+                            <input type="text" name="nama_dsn" id="nama_dsn" value="<?= $dosen["nama_dsn"]; ?>">
                         </li>
                         <li>
                             <label>Gender :</label><br>
@@ -107,7 +107,7 @@ if (isset($_POST["submit"])) {
     </section>
 
     <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
+        <p>Copyright &copy; 2022</p>
     </footer>
 
 </body>

@@ -63,7 +63,7 @@ if (isset($_POST["cari"])) {
             <div class="column3">
                 <form action="" method="post">
 
-                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama jurusan" autocomplete="off">
+                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama jurusan" autocomplete="off">
                     <button type="submit" name="cari"> Cari!</button>
                 </form> <br>
 
@@ -103,7 +103,7 @@ if (isset($_POST["cari"])) {
     </section>
 
     <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
+        <p>Copyright &copy; 2022</p>
     </footer>
 
 </body>

@@ -38,91 +38,87 @@ if (isset($_POST["cari"])) {
 </head>
 
 <body>
-    <div class="header">
-        <h2 class="h2">Virgi's</h2>
-    </div>
-
-    <section>
+    <header>
+        <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
+            <ul class="nav_links">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#">Mahasiswa</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a class="active" href="#">Mahasiswa</a></li>
                 <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
-                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
-        <div class="row">
-            <h1>
-                Daftar Mahasiswa
-            </h1>
+        <a href="../logout.php"><button class="btn2">Logout</button></a>
+    </header>
+    <div class="cntr">
+        <h1>
+            Daftar Mahasiswa
+        </h1>
+        <!-- <div class="container"> -->
+        <a href="tambahMhs.php">Tambah Data Mahasiswa</a>
+        <form action="" method="post">
+            <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama mahasiswa" autocomplete="off">
+            <button type="submit" name="cari"> Cari!</button>
+        </form> <br>
+        <!-- </div> -->
 
-            <a href="tambahMhs.php">Tambah Data Mahasiswa</a>
-            <br><br>
-            <div class="column3">
-                <form action="" method="post">
 
-                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama mahasiswa" autocomplete="off">
-                    <button type="submit" name="cari"> Cari!</button>
-                </form> <br>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>No</th>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Jurusan</th>
+                <th>Gender</th>
+                <th>Alamat</th>
+                <th>No HP</th>
+                <th>Email</th>
+                <th>Aksi</th>
+            </tr>
 
-                <table border="1" cellpadding="10" cellspacing="0">
-                    <tr>
-                        <th>No</th>
-                        <th>NIM</th>
-                        <th>Nama</th>
-                        <th>Jurusan</th>
-                        <th>Gender</th>
-                        <th>Alamat</th>
-                        <th>No HP</th>
-                        <th>Email</th>
-                        <th>Aksi</th>
-                    </tr>
+            <?php
+            $i = 1;
+            foreach ($mhs as $row) :
+            ?>
+                <tr>
+                    <td>
+                        <?= $i++ ?>
+                    </td>
+                    <td>
+                        <?= $row["nim"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["nama_mhs"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["kode_jurusan"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["gender"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["alamat"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["no_hp"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["email"]; ?>
+                    </td>
+                    <td>
+                        <a href="ubahMhs.php?nim=<?= $row["nim"]; ?>">Ubah</a>
+                        <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
 
-                    <?php
-                    $i = 1;
-                    foreach ($mhs as $row) :
-                    ?>
-                        <tr>
-                            <td>
-                                <?= $i++ ?>
-                            </td>
-                            <td>
-                                <?= $row["nim"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["nama_mhs"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["kode_jurusan"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["gender"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["alamat"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["no_hp"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["email"]; ?>
-                            </td>
-                            <td>
-                                <a href="ubahMhs.php?nim=<?= $row["nim"]; ?>">Ubah</a>
-                                <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
-            </div>
-        </div>
-    </section>
 
-    <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
-    </footer>
+
+        <!-- <footer>
+            <p>Copyright &copy; 2022</p>
+        </footer> -->
 
 </body>
 

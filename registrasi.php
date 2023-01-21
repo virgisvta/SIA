@@ -33,41 +33,27 @@ if (isset($_POST["register"])) {
 <body>
     <div class="center">
 
-   
-    <h1>Registration Page</h1>
-    <form action="" method="POST">
-        <div class="txt_field">
 
-      
-        <!-- <ul>
-            <li> -->
+        <h1>Registration Page</h1>
+        <form action="" method="POST">
+            <div class="txt_field">
                 <label for="email">Email :</label>
-                <input type="email" name="email" id="email">
-                </div>
-            <!-- </li>
-            <li> -->
-                <div class="txt_field">
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="txt_field">
                 <label for="nama">Nama :</label>
-                <input type="nama" name="nama" id="nama">
-                </div>
-            <!-- </li>
-            <li> -->
-                <div class="txt_field">
+                <input type="nama" name="nama" id="nama" required>
+            </div>
+            <div class="txt_field">
                 <label for="password">Password :</label>
-                <input type="password" name="password" id="password">
-                </div>
-            <!-- </li>
-            <li> -->
-                <div class="txt_field">
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="txt_field">
                 <label for="password2">Konfirmasi Password :</label>
-                <input type="password" name="password2" id="password2">
-                </div>
-            <!-- </li> <br> -->
-            <!-- <li> -->
-                <button type="submit" name="register" class="button">Register</button>
-            <!-- </li>
-        </ul> -->
-    </form>
+                <input type="password" name="password2" id="password2" required>
+            </div>
+            <button type="submit" name="register" class="btn">Register</button>
+        </form>
     </div>
 </body>
 

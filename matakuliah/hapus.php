@@ -7,13 +7,13 @@ if (!isset($_SESSION["masuk"])) {
 }
 require '../function.php';
 
-$nim = $_GET['nim'];
+$id = $_GET['id_matakuliah'];
 
-if (hapus($nim) > 0) {
+if (hapusMatkul($id) > 0) {
     echo "
     <script>
         alert('data berhasil dihapus');
-        document.location.href = 'index.php';
+        document.location.href = 'matakuliah.php';
     </script>
 
 
@@ -23,6 +23,6 @@ if (hapus($nim) > 0) {
     // mysqli_error($con);
     "<script>
     alert('data gagal dihapus');
-    document.location.href = 'index.php';
+    document.location.href = 'matakuliah.php';
     </script>";
 }

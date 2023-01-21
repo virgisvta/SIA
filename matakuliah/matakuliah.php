@@ -38,81 +38,73 @@ if (isset($_POST["cari"])) {
 </head>
 
 <body>
-    <div class="header">
-        <h2 class="h2">Virgi's</h2>
-    </div>
-
-    <section>
+    <header>
+        <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
-                <li><a href="../dosen/dosen.php">Dosen</a></li>
+            <ul class="nav_links">
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
-                <li><a class="active" href="#">Mata Kuliah</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="#">Matakuliah</a></li>
             </ul>
         </nav>
-        <div class="row">
-            <h1>
-                Daftar Matakuliah
-            </h1>
+        <a href="../logout.php"><button class="btn2">Logout</button></a>
+    </header>
+    <div class="row">
+        <h1>
+            Daftar Matakuliah
+        </h1>
 
-            <a href="tambahmatkul.php">Tambah Data Matakuliah</a>
-            <br><br>
-            <div class="column3">
-                <form action="" method="post">
+        <a href="tambahmatkul.php">Tambah Data Matakuliah</a>
+        <form action="" method="post">
 
-                    <input type="text" name="keyword" size="40" autofocus placeholder="Masukkan nama matakuliah" autocomplete="off">
-                    <button type="submit" name="cari"> Cari!</button>
-                </form> <br>
+            <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama matakuliah" autocomplete="off">
+            <button type="submit" name="cari"> Cari!</button>
+        </form> <br>
 
-                <table border="1" cellpadding="10" cellspacing="0">
-                    <tr>
-                        <th>Id_Matakuliah</th>
-                        <th>Nama_Matakuliah</th>
-                        <th>Dosen_Matakuliah</th>
-                        <th>Waktu</th>
-                        <th>Hari</th>
-                    </tr>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>No</th>
+                <th>Nama_Matakuliah</th>
+                <th>Dosen_Matakuliah</th>
+                <th>Waktu</th>
+                <th>Hari</th>
+                <th>Aksi</th>
+            </tr>
 
-                    <?php
-                    $i = 1;
-                    foreach ($matakuliah as $row) :
-                    ?>
-                        <tr>
-                            <td>
-                                <?= $i++ ?>
-                            </td>
-                            <td>
-                                <?= $row["id_matakuliah"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["nama_matakuliah"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["dosen_matakuliah"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["waktu"]; ?>
-                            </td>
-                            <td>
-                                <?= $row["hari"]; ?>
-                            </td>
-                            <td>
-                                <a href="ubahmatkul.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>">Ubah</a>
-                                <a href="hapus.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </table>
-            </div>
-        </div>
-    </section>
+            <?php
+            $i = 1;
+            foreach ($matakuliah as $row) :
+            ?>
+                <tr>
+                    <td>
+                        <?= $i++ ?>
+                    </td>
+                    <td>
+                        <?= $row["nama_matakuliah"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["nidn"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["waktu"]; ?>
+                    </td>
+                    <td>
+                        <?= $row["hari"]; ?>
+                    </td>
+                    <td>
+                        <a href="ubahmatkul.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>">Ubah</a>
+                        <a href="hapus.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
 
-    <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
-    </footer>
+    <!-- <footer>
+        <p>Copyright &copy; 2022</p>
+    </footer> -->
 
 </body>
 

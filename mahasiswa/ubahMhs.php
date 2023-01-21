@@ -115,7 +115,7 @@ if (isset($_POST["submit"])) {
     </section>
 
     <footer>
-        <p>Copyright &copy; Virgi Savita 2022</p>
+        <p>Copyright &copy; 2022</p>
     </footer>
 
 </body>

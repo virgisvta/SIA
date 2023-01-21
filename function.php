@@ -40,7 +40,7 @@ function tambahDsn($data)
     $no_hp =  htmlspecialchars($data['no_hp']);
     $email = htmlspecialchars($data['email']);
 
-    $query = "INSERT INTO data_mahasiswa (`nidn`, `nama_dsn`, `gender`, `alamat`, `no_hp`, `email`) VALUES ('$nidn','$nama','$gender','$alamat','$no_hp','$email')";
+    $query = "INSERT INTO data_dosen (`nidn`, `nama_dsn`, `gender`, `alamat`, `no_hp`, `email`) VALUES ('$nidn','$nama','$gender','$alamat','$no_hp','$email')";
     mysqli_query($con, $query);
 
     return mysqli_affected_rows($con);
@@ -61,13 +61,12 @@ function tambahJrs($data)
 function tambahMatkul($data)
 {
     global $con;
-    $id = htmlspecialchars($data['id_matakuliah']);
     $nama_matkul =  htmlspecialchars($data['nama_matakuliah']);
-    $dosen = htmlspecialchars($data['dosen_matakuliah']);
+    $dosen = htmlspecialchars($data['nidn']);
     $waktu =  htmlspecialchars($data['waktu']);
     $hari = htmlspecialchars($data['hari']);
 
-    $query = "INSERT INTO data_mahasiswa (`id`, `nama_matakuliah`, `dosen_matakuliah`, `waktu`, `hari`) VALUES ('$id','$nama_matkul','$dosen','$waktu','$hari')";
+    $query = "INSERT INTO mata_kuliah ( `nama_matakuliah`, `nidn`, `waktu`, `hari`) VALUES ('$nama_matkul','$dosen','$waktu','$hari')";
     mysqli_query($con, $query);
 
     return mysqli_affected_rows($con);
@@ -110,7 +109,7 @@ function updateDsn($data)
     $no_hp =  htmlspecialchars($data['no_hp']);
     $email = htmlspecialchars($data['email']);
 
-    $query = "UPDATE data_mahasiswa SET 
+    $query = "UPDATE data_dosen SET 
                 `nim` = '$nim', 
                 `nama_dsn` = '$nama',  
                 `gender` = $gender, 
@@ -140,6 +139,26 @@ function updateJ($data)
     return mysqli_affected_rows($con);
 }
 
+function updateMatkul($matkul)
+{
+    global $con;
+
+    $nama_matkul = htmlspecialchars($matkul['nama_matakuliah']);
+    $nidn =  htmlspecialchars($matkul['nidn']);
+    $waktu = htmlspecialchars($matkul['waktu']);
+    $hari = htmlspecialchars($matkul['hari']);
+    $id = $matkul['id_matakuliah'];
+
+    $query = "UPDATE mata_kuliah SET 
+                `nama_matakuliah` = '$nama_matkul', 
+                `nidn` = '$nidn', `waktu` = '$waktu', `hari` = '$hari'
+                WHERE `id_matakuliah` = '$id'
+                ";
+    mysqli_query($con, $query);
+
+    return mysqli_affected_rows($con);
+}
+
 function hapus($nim)
 {
     global $con;
@@ -160,6 +179,14 @@ function hapusJ($kode_jurusan)
 {
     global $con;
     mysqli_query($con, "DELETE FROM data_jurusan WHERE `kode_jurusan` = '$kode_jurusan' ");
+
+    return mysqli_affected_rows($con);
+}
+
+function hapusMatkul($id)
+{
+    global $con;
+    mysqli_query($con, "DELETE FROM mata_kuliah WHERE `id_matakuliah` = '$id' ");
 
     return mysqli_affected_rows($con);
 }
