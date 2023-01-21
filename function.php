@@ -61,12 +61,12 @@ function tambahJrs($data)
 function tambahMatkul($data)
 {
     global $con;
-    $nama_matkul =  htmlspecialchars($data['nama_matakuliah']);
+    $nama_matkul =  htmlspecialchars($data['nama_matkul']);
     $dosen = htmlspecialchars($data['nidn']);
     $waktu =  htmlspecialchars($data['waktu']);
     $hari = htmlspecialchars($data['hari']);
 
-    $query = "INSERT INTO mata_kuliah ( `nama_matakuliah`, `nidn`, `waktu`, `hari`) VALUES ('$nama_matkul','$dosen','$waktu','$hari')";
+    $query = "INSERT INTO data_matkul ( `id_matkul`,`nama_matkul`, `nidn`, `waktu`, `hari`) VALUES ('','$nama_matkul','$dosen','$waktu','$hari')";
     mysqli_query($con, $query);
 
     return mysqli_affected_rows($con);
@@ -102,7 +102,7 @@ function updateMhs($data)
 function updateDsn($data)
 {
     global $con;
-    $nim = htmlspecialchars($data['nidn']);
+    $nidn = htmlspecialchars($data['nidn']);
     $nama =  htmlspecialchars($data['nama_dsn']);
     $gender = htmlspecialchars($data['gender']);
     $alamat =  htmlspecialchars($data['alamat']);
@@ -110,13 +110,13 @@ function updateDsn($data)
     $email = htmlspecialchars($data['email']);
 
     $query = "UPDATE data_dosen SET 
-                `nim` = '$nim', 
+                `nidn` = '$nidn', 
                 `nama_dsn` = '$nama',  
                 `gender` = $gender, 
                 `alamat` = '$alamat', 
                 `no_hp` = '$no_hp', 
                 `email` = '$email'
-                WHERE `nim` = '$nim'
+                WHERE `nidn` = '$nidn'
                 ";
     mysqli_query($con, $query);
 
@@ -143,17 +143,19 @@ function updateMatkul($matkul)
 {
     global $con;
 
-    $nama_matkul = htmlspecialchars($matkul['nama_matakuliah']);
+    $id =  htmlspecialchars($matkul['id_matkul']);
+    $nama_matkul = htmlspecialchars($matkul['nama_matkul']);
     $nidn =  htmlspecialchars($matkul['nidn']);
     $waktu = htmlspecialchars($matkul['waktu']);
     $hari = htmlspecialchars($matkul['hari']);
-    $id = $matkul['id_matakuliah'];
+    var_dump($matkul);
 
-    $query = "UPDATE mata_kuliah SET 
-                `nama_matakuliah` = '$nama_matkul', 
+    $query = "UPDATE data_matkul SET
+                `nama_matkul` = '$nama_matkul', 
                 `nidn` = '$nidn', `waktu` = '$waktu', `hari` = '$hari'
-                WHERE `id_matakuliah` = '$id'
+                WHERE `id_matkul` = '$id'
                 ";
+    // var_dump($query);
     mysqli_query($con, $query);
 
     return mysqli_affected_rows($con);

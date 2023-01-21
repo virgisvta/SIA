@@ -7,10 +7,11 @@ if (!isset($_SESSION["masuk"])) {
 }
 require '../function.php';
 
-$id = $_GET["id_matakuliah"];
+$id = $_GET['id_matkul'];
 
-$matkul = query("SELECT * FROM mata_kuliah WHERE`id_matakuliah` = '$id'")[0];
-// var_dump($mhs);
+$matkul = query("SELECT * FROM data_matkul WHERE `id_matkul` = '$id'")[0];
+
+var_dump($id);
 
 if (isset($_POST["submit"])) {
 
@@ -61,8 +62,8 @@ if (isset($_POST["submit"])) {
         <form action="" method="POST">
             <ul>
                 <li>
-                    <label for="matkul">Nama Matakuliah :</label><br>
-                    <input type="text" name="matkul" id="matkul" value="<?= $matkul["nama_matakuliah"];  ?>">
+                    <label for="nama_matkul">Nama Matakuliah :</label><br>
+                    <input type="text" name="nama_matkul" id="nama_matkul" value="<?= $matkul["nama_matkul"];  ?>">
                 </li>
                 <li>
                     <label for="nidn">NIDN :</label> <br>
