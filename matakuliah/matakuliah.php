@@ -14,16 +14,17 @@ require '../function.php';
 // $halaman = ceil($data / $jmldata);
 
 
-$matakuliah = query("SELECT * FROM mata_kuliah ");
+$matakuliah = query("SELECT * FROM data_matkul ");
 function search($keyword)
 {
-    $query = "SELECT * FROM mata_kuliah WHERE mata_kuliah LIKE '%" . $keyword . "%'";
+    $query = "SELECT * FROM data_matkul WHERE nama_matkul LIKE '%" . $keyword . "%'";
     return query($query);
 }
 
 if (isset($_POST["cari"])) {
     $matakuliah = search($_POST["keyword"]);
 }
+var_dump($matakuliah);
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +83,7 @@ if (isset($_POST["cari"])) {
                         <?= $i++ ?>
                     </td>
                     <td>
-                        <?= $row["nama_matakuliah"]; ?>
+                        <?= $row["nama_matkul"]; ?>
                     </td>
                     <td>
                         <?= $row["nidn"]; ?>
@@ -94,8 +95,8 @@ if (isset($_POST["cari"])) {
                         <?= $row["hari"]; ?>
                     </td>
                     <td>
-                        <a href="ubahmatkul.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>">Ubah</a>
-                        <a href="hapus.php?id_matakuliah=<?= $row["id_matakuliah"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                        <a href="ubahmatkul.php?id_matkul=<?= $row["id_matkul"]; ?>">Ubah</a>
+                        <a href="hapus.php?id_matkul=<?= $row["id_matkul"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
