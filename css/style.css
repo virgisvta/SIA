@@ -7,6 +7,32 @@
     background-color: #edf0f1;
 }
 
+
+.container{
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+	/*meletakkan form ke tengah*/
+	margin: 10% auto;
+	padding-left: 5%;
+    width: 100%;
+}
+
+input[type=text],
+input[type=number],
+input[type=email]  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+/* .nidn1{
+    width: 400px;
+} */
+
+
 li,
 a,
 button {
