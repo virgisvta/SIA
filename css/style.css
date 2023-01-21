@@ -253,7 +253,7 @@ form .txt_field {
 
 input[type=text],
 input[type=email],
-input[type=[password]],
+input[type=password],
 textarea {
     width: 100%;
     padding: 10px 20px;
@@ -263,6 +263,19 @@ textarea {
     font-family: monospace;
     background-color: rgb(241, 237, 237);
     border-radius: 4px;
+}
+
+.nidn {
+    outline: 0;
+    font-family: 'Open Sans', sans-serif;
+    width: 350px;
+
+    /*meletakkan form ke tengah*/
+    margin: 50px auto;
+    padding: 0px 70px;
+    width: 250px;
+
+
 }
 
 /* section p {

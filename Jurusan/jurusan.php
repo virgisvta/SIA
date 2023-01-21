@@ -39,21 +39,24 @@ if (isset($_POST["cari"])) {
 
 <body>
     <div class="header">
-        <h2 class="h2">Virgi's</h2>
+   
     </div>
 
     <section>
+    <header>
+        <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a href="../index.php">Dashboard</a></li>
+            <ul class="nav_links">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#">Mahasiswa</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
-                <li><a class="active" href="#">Jurusan</a></li>
-                <li><a href="../matakuliah/matakuliah.php">Mata Kuliah</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
-        <div class="row">
+        <a href="../logout.php"><button class="btn2">Logout</button></a>
+    </header>
+        <div class="cntr">
             <h1>
                 Daftar Jurusan
             </h1>
@@ -90,7 +93,6 @@ if (isset($_POST["cari"])) {
                             <td>
                                 <?= $row["nama_jurusan"]; ?>
                             </td>
-
                             <td>
                                 <a href="ubahjurusan.php?kode_jurusan=<?= $row["kode_jurusan"]; ?>">Ubah</a>
                                 <a href="hapus.php?kode_jurusan=<?= $row["kode_jurusan"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
@@ -101,10 +103,6 @@ if (isset($_POST["cari"])) {
             </div>
         </div>
     </section>
-
-    <footer>
-        <p>Copyright &copy; 2022</p>
-    </footer>
 
 </body>
 
