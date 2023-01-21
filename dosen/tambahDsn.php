@@ -101,9 +101,9 @@ if (isset($_POST["submit"])) {
 
                 </form>
             </div>
-            <div class="col ">
+            <!-- <div class="col ">
                 Column2
-            </div>
+            </div> -->
             <!-- <div class="col">
       Column
     </div> -->

@@ -36,7 +36,7 @@ require "function.php"
 
     <div class="center">
         <h1>Welcome to SKEMA !</h1>
-        <p style="font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi porro ut quisquam. Enim non iure omnis, voluptas ea possimus. Molestias quidem qui, blanditiis culpa vero accusantium at. Ducimus, odit.</p>
+        <p style="font-size: 16px; text-align: center; font-family: 'Courier New', Courier, monospace;">Sistem Kepo Mahasiswa</p>
     </div>
 </body>
 
