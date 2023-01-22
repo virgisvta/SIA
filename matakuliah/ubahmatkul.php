@@ -37,8 +37,10 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Update Data Matakuliah</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -55,23 +57,23 @@ if (isset($_POST["submit"])) {
         </nav>
         <a href="#"><button class="btn2">Logout</button></a>
     </header>
-    <div class="cntr">
+    <div class="cntr px-5">
         <h1> Update Data Mahasiswa</h1>
+        </div>
+    <div class="mt-4 mb-5 px-4">
         <form action="" method="POST">
+            <div class="form-control">
             <ul>
-                <li>
+                
                     <label for="nama_matkul">Nama Matakuliah :</label><br>
                     <input type="text" name="nama_matkul" id="nama_matkul" value="<?= $matkul["nama_matkul"];  ?>">
-                </li>
-                <li>
+                    <br>
                     <label for="nidn">NIDN :</label> <br>
                     <input type="text" name="nidn" id="nidn" value="<?= $matkul["nidn"]; ?>">
-                </li>
-                <li>
+                    <br>
                     <label for="waktu">Waktu :</label><br>
                     <input type="time" name="waktu" id="waktu" value="<?= $matkul["waktu"]; ?>">
-                </li>
-                <li>
+                    <br>
                     <label>Hari :</label><br>
                     <select name="hari">
                         <option value="Senin">Senin</option>
@@ -80,10 +82,8 @@ if (isset($_POST["submit"])) {
                         <option value="Kamis">Kamis</option>
                         <option value="Jumat">Jumat</option>
                         <option value="Sabtu">Sabtu</option>
-                    </select><br>
-                </li>
-                <br><br>
-                <button type=" submit" name="submit">Update Data</button>
+                    </select><br><br>
+                <button class="btn btn-dark" submit" name="submit">Update Data</button>
             </ul>
 
 

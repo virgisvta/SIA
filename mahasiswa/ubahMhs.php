@@ -58,11 +58,9 @@ if (isset($_POST["submit"])) {
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
     </header>
-    <h1 class="position-absolute top-30 start-50 translate-middle"> Tambah Data Dosen</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <form action="" method="POST" class="position-absolute top-80 start-30 translate-middle">
+    <h1 class="cntr px-5"> Tambah Data Mahasiswa</h1>
+    <div class="mt-4 mb-5 px-4">
+                <form action="" method="POST">
                     <div class="form-control"><!-- <div class="container"> -->
                         <ul>
                             <label for="nim">NIM :</label><br>

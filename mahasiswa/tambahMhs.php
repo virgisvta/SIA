@@ -51,13 +51,13 @@ if (isset($_POST["submit"])) {
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
     </header>
-    <div class="center">
-
-    
-    <h1 class="position-absolute top-30 start-50 translate-middle"> Tambah Data Mahasiswa</h1>
-    <form action="" method="POST">
-        <div class="container">
-        <ul>
+    <div class="cntr px-5">
+        <h1> Tambah Data mahasiswa</h1>
+    </div>
+    <div class="mt-4 mb-5 px-4">
+        <form action="" method="POST">
+            <div class="form-control">
+                <ul>
             <!-- <li> -->
                 <label for="nim">NIM :</label><br>
                 <input type="number" name="nim" id="nim" required>
@@ -101,7 +101,7 @@ if (isset($_POST["submit"])) {
             <button type="submit" name="submit">Tambah Data</button>
         </ul>
 
-        </div>
+
     </form>
     </div>
 </body>

@@ -32,7 +32,9 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Matakuliah</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -49,23 +51,26 @@ if (isset($_POST["submit"])) {
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
     </header>
-    <div class="cntr">
-        <h1> Tambah Matakuliah</h1>
+    <div class="cntr px-5">
+        <h1> Tambah Data Matakuliah</h1>
+    </div>
+    <div class="mt-4 mb-5 px-4">
         <form action="" method="POST">
-            <ul>
-                <li>
+            <div class="form-control">
+                <ul>
+                
                     <label for="nama_matkul">Nama Matakuliah:</label> <br>
                     <input type="text" name="nama_matkul" id="nama_matkul">
-                </li>
-                <li>
+                    <br>
+                
                     <label for="nidn">NIDN Dosen Matakuliah :</label><br>
                     <input type="text" name="nidn" id="nidn">
-                </li>
-                <li>
+                    <br>
+                
                     <label for="waktu">Waktu :</label><br>
                     <input type="time" name="waktu" id="waktu">
-                </li>
-                <li>
+                    <br>
+                
                     <label>Hari :</label><br>
                     <select name="hari">
                         <option value="Senin">Senin</option>
@@ -74,10 +79,8 @@ if (isset($_POST["submit"])) {
                         <option value="Kamis">Kamis</option>
                         <option value="Jumat">Jumat</option>
                         <option value="Sabtu">Sabtu</option>
-                    </select><br>
-                </li>
-                <br>
-                <button type="submit" name="submit">Tambah Data</button>
+                    </select><br><br>
+                <button class="btn btn-dark" type="submit" name="submit">Tambah Data</button>
             </ul>
 
 
