@@ -65,7 +65,6 @@ if (isset($_POST["submit"])) {
         <form action="" method="POST">
             <div class="form-control">
 
-
                 <ul>
                     <label for="nidn">NIDN :</label><br>
                     <input type="number" name="nidn" id="nidn" required value="<?= $dosen["nidn"];  ?>" readonly>

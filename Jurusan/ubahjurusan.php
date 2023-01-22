@@ -36,53 +36,45 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <h2 class="h2">Virgi's</h2>
-    </div>
-
-    <section>
+    <header>
+        <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
-            <ul>
-                <li><a href="index.html">Dashboard</a></li>
+            <ul class="nav_links">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="#">Mahasiswa</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
-                <li><a class="active" href="mahasiswa.php">Mahasiswa</a></li>
                 <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
-                <li><a href="contact.html">Mata Kuliah</a></li>
-                <li><a href="about.html">Ruangan</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
-        <div class="row">
-            <div class="column3">
-                <h1> Update Data Mahasiswa</h1>
-                <form action="" method="POST">
-                    <ul>
-                        <li>
-                            <label for="kode_jurusan">Kode Jurusan :</label>
-                            <input type="text" name="kode_jurusan" id="kode_jurusan" value="<?= $jurusan["kode_jurusan"]; ?>" readonly>
-                        </li>
-                        <li>
-                            <label for="nama_jurusan">Nama Jurusan :</label> <br>
-                            <input type="text" name="nama_jurusan" id="nama_jurusan" value="<?= $jurusan["nama_jurusan"]; ?>">
-                        </li>
+        <a href="../logout.php"><button class="btn btn-dark">Logout</button></a>
+    </header>
+    <div class="cntr px-5">
+        <h1> Update Data Jurusan</h1>
+    </div>
+    <div class="mt-4 mb-5 px-4">
+        <form action="" method="POST">
+            <div class="form-control">
 
-                        <button type="submit" name="submit">Update Data</button>
-                    </ul>
+                <ul>
+                    <label for="kode_jurusan">Kode Jurusan :</label><br>
+                    <input type="text" name="kode_jurusan" id="kode_jurusan" value="<?= $jurusan["kode_jurusan"]; ?>" readonly><br>
 
-
-                </form>
+                    <label for="nama_jurusan">Nama Jurusan :</label> <br>
+                    <input type="text" name="nama_jurusan" id="nama_jurusan" value="<?= $jurusan["nama_jurusan"]; ?>">
+                    <br><br>
+                    <button class="btn btn-dark" type=" submit" name="submit">Update Data</button>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <footer>
-        <p>Copyright &copy; 2022</p>
-    </footer>
-
+        </form>
+    </div>
 </body>
 
 </html>

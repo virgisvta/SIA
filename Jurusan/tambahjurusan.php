@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-<header>
+    <header>
         <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
             <ul class="nav_links">
@@ -50,28 +50,24 @@ if (isset($_POST["submit"])) {
                 <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
-        <a href="../logout.php"><button class="btn2">Logout</button></a>
+        <a href="../logout.php"><button class="btn btn-dark">Logout</button></a>
     </header>
-    <div class=""></div>
-    <h1  class="position-absolute top-30 start-50 translate-middle"> Tambah Data Jurusan</h1>
-    <form action="" method="POST">
-        <ul>
-
-            <!-- <li> -->
-                <label for="kode_jurusan">Kode Jurusan :</label> <br>
-                <input type="text" name="kode_jurusan" id="kode_jurusan"> 
-                <br>
-            <!-- </li>
-            <li> -->
-                <label for="nama_jurusan">Nama Jurusan :</label><br>
-                <input type="text" name="nama_jurusan" id="nama_jurusan">
-                <br><br>
-            <!-- </li> -->
-            <button type="submit" name="submit">Tambah Data</button>
-        </ul>
-
-
-    </form>
+    <div class="cntr px-5">
+        <h1>Tambah Data Jurusan</h1>
+    </div>
+    <div class="mt-4 mb-5 px-4">
+        <form action="" method="POST">
+            <div class="form-control">
+                <ul>
+                    <label for="kode_jurusan">Kode Jurusan :</label> <br>
+                    <input type="text" name="kode_jurusan" id="kode_jurusan">
+                    <br>
+                    <label for="nama_jurusan">Nama Jurusan :</label><br>
+                    <input type="text" name="nama_jurusan" id="nama_jurusan">
+                    <br><br>
+                    <button type="submit" name="submit" class="btn btn-dark">Tambah Data</button>
+                </ul>
+        </form>
 </body>
 
 </html>

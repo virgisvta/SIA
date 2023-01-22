@@ -74,21 +74,14 @@ if (isset($_POST["submit"])) {
                     <input type="radio" name="gender" value="0"> Perempuan
                     <input type="radio" name="gender" value="1"> Laki-laki
                     <br><br>
-                    <!-- </li> -->
-                    <!-- <li> -->
                     <label for="alamat">Alamat :</label><br>
                     <input type="text" name="alamat" id="alamat">
                     <br>
-                    <!-- </li>
-            <li> -->
                     <label for="no_hp">No HP :</label><br>
                     <input type="number" name="no_hp" id="no_hp">
                     <br>
-                    <!-- </li>
-            <li> -->
                     <label for="email">Email :</label><br>
                     <input type="email" name="email" id="email">
-                    <!-- </li> -->
                     <br>
                     <br>
                     <button type="submit" name="submit" class="btn btn-dark">Tambah Data</button>
