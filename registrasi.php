@@ -7,6 +7,7 @@ if (isset($_POST["register"])) {
         echo
         "<script>
             alert('User berhasil ditambahkan');
+            document.location.href = 'login.php';
         </script>";
     } else {
         echo mysqli_error($con);
@@ -37,22 +38,18 @@ if (isset($_POST["register"])) {
         <h1>Registration Page</h1>
         <form action="" method="POST">
             <div class="txt_field">
-                <label for="email">Email :</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email" required placeholder="Input your email">
             </div>
             <div class="txt_field">
-                <label for="nama">Nama :</label>
-                <input type="nama" name="nama" id="nama" required>
+                <input type="nama" name="nama" id="nama" required placeholder="Input your name">
             </div>
             <div class="txt_field">
-                <label for="password">Password :</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" required placeholder="Input your password">
             </div>
             <div class="txt_field">
-                <label for="password2">Konfirmasi Password :</label>
-                <input type="password" name="password2" id="password2" required>
+                <input type="password" name="password2" id="password2" required placeholder="Confirm password">
             </div>
-            <button type="submit" name="register" class="button">Register</button>
+            <button type="submit" name="register" class="btn btn-dark">Register</button>
         </form>
     </div>
 </body>
