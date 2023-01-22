@@ -58,56 +58,53 @@ if (isset($_POST["submit"])) {
         </nav>
         <a href="../logout.php"><button class="btn btn-dark">Logout</button></a>
     </header>
-    <div class="row">
-        <div class="column3">
-            <h1> Update Data Dosen</h1>
-            <form action="" method="POST">
+    <div class="cntr px-5">
+        <h1> Update Data Dosen</h1>
+    </div>
+    <div class="mt-4 mb-5 px-4">
+        <form action="" method="POST">
+            <div class="form-control">
+
+
                 <ul>
-                    <li>
-                        <label for="nidn">NIDN :</label><br>
-                        <input type="number" name="nidn" id="nidn" required value="<?= $dosen["nidn"];  ?>" readonly>
-                    </li>
-                    <li>
-                        <label for="nama_dsn">Nama :</label> <br>
-                        <input type="text" name="nama_dsn" id="nama_dsn" value="<?= $dosen["nama_dsn"]; ?>">
-                    </li>
-                    <li>
-                        <label>Gender :</label><br>
-                        <?php
-                        if ($dosen['gender'] == 0) {
-                        ?>
-                            <input type="radio" name="gender" value="0" checked> Perempuan
-                            <input type="radio" name="gender" value="1"> Laki-laki
-                        <?php } else { ?>
-                            <input type="radio" name="gender" value="0"> Perempuan
-                            <input type="radio" name="gender" value="1" checked> Laki-laki
-                        <?php } ?>
-                    </li>
-                    <li>
-                        <label for="alamat">Alamat :</label><br>
-                        <input type="text" name="alamat" id="alamat" value="<?= $dosen["alamat"]; ?>">
-                    </li>
-                    <li>
-                        <label for=" no_hp">No HP :</label><br>
-                        <input type="number" name="no_hp" id="no_hp" value="<?= $dosen["no_hp"]; ?>">
-                    </li>
-                    <li>
-                        <label for=" email">Email :</label><br>
-                        <input type="email" name="email" id="email" value="<?= $dosen["email"]; ?>">
-                    </li>
+                    <label for="nidn">NIDN :</label><br>
+                    <input type="number" name="nidn" id="nidn" required value="<?= $dosen["nidn"];  ?>" readonly>
                     <br>
-                    <button type=" submit" name="submit">Update Data</button>
+
+                    <label for="nama_dsn">Nama :</label> <br>
+                    <input type="text" name="nama_dsn" id="nama_dsn" value="<?= $dosen["nama_dsn"]; ?>"><br>
+
+                    <label>Gender :</label><br>
+                    <?php
+                    if ($dosen['gender'] == 0) {
+                    ?>
+                        <input type="radio" name="gender" value="0" checked> Perempuan
+                        <input type="radio" name="gender" value="1"> Laki-laki
+                    <?php } else { ?>
+                        <input type="radio" name="gender" value="0"> Perempuan
+                        <input type="radio" name="gender" value="1" checked> Laki-laki
+                    <?php } ?><br>
+
+                    <label for="alamat">Alamat :</label><br>
+                    <input type="text" name="alamat" id="alamat" value="<?= $dosen["alamat"]; ?>"><br>
+
+                    <label for=" no_hp">No HP :</label><br>
+                    <input type="number" name="no_hp" id="no_hp" value="<?= $dosen["no_hp"]; ?>"><br>
+
+                    <label for=" email">Email :</label><br>
+                    <input type="email" name="email" id="email" value="<?= $dosen["email"]; ?>">
+
+                    <br><br>
+                    <button class="btn btn-dark" type=" submit" name="submit">Update Data</button>
                 </ul>
 
+            </div>
+        </form>
 
-            </form>
-        </div>
     </div>
-    </section>
-
-    <footer>
+    <!-- <footer>
         <p>Copyright &copy; 2022</p>
-    </footer>
+    </footer> -->
 
 </body>
 

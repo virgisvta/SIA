@@ -143,20 +143,17 @@ function updateMatkul($matkul)
 {
     global $con;
 
-    $id =  htmlspecialchars($matkul['id_matkul']);
-
     $nama_matkul = htmlspecialchars($matkul['nama_matkul']);
     $nidn =  htmlspecialchars($matkul['nidn']);
     $waktu = htmlspecialchars($matkul['waktu']);
     $hari = htmlspecialchars($matkul['hari']);
-    var_dump($matkul);
+    $id = $_GET['id_matkul'];
 
     $query = "UPDATE data_matkul SET
                 `nama_matkul` = '$nama_matkul', 
                 `nidn` = '$nidn', `waktu` = '$waktu', `hari` = '$hari'
                 WHERE `id_matkul` = '$id'
                 ";
-    // var_dump($query);
     mysqli_query($con, $query);
 
     return mysqli_affected_rows($con);

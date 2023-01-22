@@ -8,11 +8,6 @@ if (!isset($_SESSION["masuk"])) {
 
 require '../function.php';
 
-//pagination
-// $jmldata = 2;
-// $data = count(query("SELECT * FROM data_mahasiswa"));
-// $halaman = ceil($data / $jmldata);
-
 
 $mhs = query("SELECT * FROM data_mahasiswa ");
 function search($keyword)
@@ -53,69 +48,70 @@ if (isset($_POST["cari"])) {
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
     </header>
-    <div class="cntr">
+    <div class="cntr px-5">
         <h1>
             Daftar Mahasiswa
         </h1>
-        <!-- <div class="container"> -->
-        <a href="tambahMhs.php">Tambah Data Mahasiswa</a>
-        <form action="" method="post">
-            <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama mahasiswa" autocomplete="off">
-            <button type="submit" name="cari"> Cari!</button>
-        </form> <br>
-        <!-- </div> -->
+        <div class="mt-4 ">
+            <a class="btn btn-dark" href="tambahMhs.php">Tambah Data Mahasiswa</a>
+            <br><br>
+            <form action="" method="post">
+                <input type="text" name="keyword" size="40" autofocus placeholder="Masukan nama mahasiswa" autocomplete="off">
+                <button class="btn-dark" type="submit" name="cari"> Cari!</button>
+            </form> <br>
 
-
-        <table border="1" cellpadding="10" cellspacing="0">
-            <tr>
-                <th>No</th>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Jurusan</th>
-                <th>Gender</th>
-                <th>Alamat</th>
-                <th>No HP</th>
-                <th>Email</th>
-                <th>Aksi</th>
-            </tr>
-
-            <?php
-            $i = 1;
-            foreach ($mhs as $row) :
-            ?>
+        </div>
+        <div class="mt-3 mb-5">
+            <table border="2" cellpadding="30" cellspacing="0">
                 <tr>
-                    <td>
-                        <?= $i++ ?>
-                    </td>
-                    <td>
-                        <?= $row["nim"]; ?>
-                    </td>
-                    <td>
-                        <?= $row["nama_mhs"]; ?>
-                    </td>
-                    <td>
-                        <?= $row["kode_jurusan"]; ?>
-                    </td>
-                    <td>
-                        <?= $row["gender"]; ?>
-                    </td>
-                    <td>
-                        <?= $row["alamat"]; ?>
-                    </td>
-                    <td>
-                        <?= $row["no_hp"]; ?>
-                    </td>
-                    <td>
-                        <?= $row["email"]; ?>
-                    </td>
-                    <td>
-                        <a href="ubahMhs.php?nim=<?= $row["nim"]; ?>">Ubah</a>
-                        <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
-                    </td>
+                    <th>No</th>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Jurusan</th>
+                    <th>Gender</th>
+                    <th>Alamat</th>
+                    <th>No HP</th>
+                    <th>Email</th>
+                    <th>Aksi</th>
                 </tr>
-            <?php endforeach; ?>
-        </table>
 
+                <?php
+                $i = 1;
+                foreach ($mhs as $row) :
+                ?>
+                    <tr>
+                        <td>
+                            <?= $i++ ?>
+                        </td>
+                        <td>
+                            <?= $row["nim"]; ?>
+                        </td>
+                        <td>
+                            <?= $row["nama_mhs"]; ?>
+                        </td>
+                        <td>
+                            <?= $row["kode_jurusan"]; ?>
+                        </td>
+                        <td>
+                            <?= $row["gender"]; ?>
+                        </td>
+                        <td>
+                            <?= $row["alamat"]; ?>
+                        </td>
+                        <td>
+                            <?= $row["no_hp"]; ?>
+                        </td>
+                        <td>
+                            <?= $row["email"]; ?>
+                        </td>
+                        <td>
+                            <a href="ubahMhs.php?nim=<?= $row["nim"]; ?>">Ubah</a>
+                            <a href="hapus.php?nim=<?= $row["nim"]; ?>" onclick="return confirm('yakin?')">Hapus</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
 
 
         <!-- <footer>

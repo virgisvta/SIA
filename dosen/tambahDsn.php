@@ -52,66 +52,53 @@ if (isset($_POST["submit"])) {
         </nav>
         <a href="../logout.php"><button class="btn btn-dark">Logout</button></a>
     </header>
+    <div class="cntr px-5">
+        <h1> Tambah Data Dosen</h1>
+    </div>
+    <div class="mt-4 mb-5 px-4">
+        <form action="" method="POST">
+            <div class="form-control">
+                <ul>
+
+                    <label for="nidn">NIDN :</label class=""><br>
+                    <input type="number" name="nidn" id="nidn" required class="">
+
+                    <br>
 
 
-    <h1 class="position-absolute top-30 start-50 translate-middle"> Tambah Data Dosen</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <form action="" method="POST" class="position-absolute top-70 start-30 translate-middle">
-                    <div class="form-control"><!-- <div class="container"> -->
-                        <ul>
+                    <label for="nama_dsn">Nama :</label> <br>
+                    <input type="text" name="nama_dsn" id="nama_dsn">
+                    <br>
 
-                            <label for="nidn">NIDN :</label class=""><br>
-                            <input type="number" name="nidn" id="nidn" required class="">
-
-                            <br>
-
-                            <!-- <li> -->
-                            <label for="nama_dsn">Nama :</label> <br>
-                            <input type="text" name="nama_dsn" id="nama_dsn">
-                            <br>
-                            <!-- </li>
+                    <label>Gender :</label> <br><br>
+                    <input type="radio" name="gender" value="0"> Perempuan
+                    <input type="radio" name="gender" value="1"> Laki-laki
+                    <br><br>
+                    <!-- </li> -->
+                    <!-- <li> -->
+                    <label for="alamat">Alamat :</label><br>
+                    <input type="text" name="alamat" id="alamat">
+                    <br>
+                    <!-- </li>
             <li> -->
-                            <label>Gender :</label> <br><br>
-                            <input type="radio" name="gender" value="0"> Perempuan
-                            <input type="radio" name="gender" value="1"> Laki-laki
-                            <br><br>
-                            <!-- </li> -->
-                            <!-- <li> -->
-                            <label for="alamat">Alamat :</label><br>
-                            <input type="text" name="alamat" id="alamat">
-                            <br>
-                            <!-- </li>
+                    <label for="no_hp">No HP :</label><br>
+                    <input type="number" name="no_hp" id="no_hp">
+                    <br>
+                    <!-- </li>
             <li> -->
-                            <label for="no_hp">No HP :</label><br>
-                            <input type="number" name="no_hp" id="no_hp">
-                            <br>
-                            <!-- </li>
-            <li> -->
-                            <label for="email">Email :</label><br>
-                            <input type="email" name="email" id="email">
-                            <!-- </li> -->
-                            <br>
-                            <br>
-                            <button type="submit" name="submit" class="btn btn-dark">Tambah Data</button>
+                    <label for="email">Email :</label><br>
+                    <input type="email" name="email" id="email">
+                    <!-- </li> -->
+                    <br>
+                    <br>
+                    <button type="submit" name="submit" class="btn btn-dark">Tambah Data</button>
 
-                        </ul>
-                    </div>
-
-                </form>
+                </ul>
             </div>
-            <!-- <div class="col ">
-                Column2
-            </div> -->
-            <!-- <div class="col">
-      Column
-    </div> -->
-        </div>
-    </div>
+
+        </form>
 
 
-    </div>
 </body>
 
 </html>

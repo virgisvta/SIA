@@ -2290,11 +2290,12 @@ progress {
 }
 
 .form-control {
+  font-family: 'Montserrat', sans-serif;
   display: block;
   width: 200%;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #212529;
   background-color: none;
@@ -3553,7 +3554,8 @@ fieldset:disabled .btn {
 }
 
 .btn2:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: #edf0f1;
+  color: #000;
 }
 
 .btn-check:focus+.btn-dark,
@@ -7387,6 +7389,10 @@ fieldset:disabled .btn {
   top: 50% !important;
 }
 
+.top-30 {
+  top: 30% !important;
+}
+
 .top-100 {
   top: 100% !important;
 }
@@ -7417,6 +7423,14 @@ fieldset:disabled .btn {
 
 .start-60 {
   left: 60% !important;
+}
+
+.start-65 {
+  left: 65% !important;
+}
+
+.start-70 {
+  left: 73% !important;
 }
 
 .start-100 {
@@ -8063,8 +8077,8 @@ fieldset:disabled .btn {
 }
 
 .px-5 {
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
+  padding-right: 4rem !important;
+  padding-left: 4rem !important;
 }
 
 .py-0 {

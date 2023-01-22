@@ -11,8 +11,6 @@ $id = $_GET['id_matkul'];
 
 $matkul = query("SELECT * FROM data_matkul WHERE `id_matkul` = '$id'")[0];
 
-var_dump($id);
-
 if (isset($_POST["submit"])) {
 
     if (updateMatkul($_POST) > 0) {
