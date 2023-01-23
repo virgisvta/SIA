@@ -93,7 +93,12 @@ if (isset($_POST["cari"])) {
                             <?= $row["kode_jurusan"]; ?>
                         </td>
                         <td>
-                            <?= $row["gender"]; ?>
+                            <?php if ($row['gender'] == 0) {
+                            ?>
+                                Perempuan
+                            <?php } else { ?>
+                                Laki-laki
+                            <?php } ?>
                         </td>
                         <td>
                             <?= $row["alamat"]; ?>
