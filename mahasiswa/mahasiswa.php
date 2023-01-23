@@ -61,7 +61,7 @@ if (isset($_POST["cari"])) {
             </form> <br>
 
         </div>
-        <div class="mt-3 mb-5">
+        <div class="mt-2 mb-5">
             <table border="2" cellpadding="30" cellspacing="0">
                 <tr>
                     <th>No</th>
@@ -114,10 +114,11 @@ if (isset($_POST["cari"])) {
         </div>
 
 
-        <!-- <footer>
-            <p>Copyright &copy; 2022</p>
-        </footer> -->
 
+        <div class="footer  text-center">
+            <p>Copyright &copy; 2022</p>
+        </div>
 </body>
+
 
 </html>

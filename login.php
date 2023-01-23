@@ -34,7 +34,11 @@ if (isset($_POST["masuk"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+
+
+
 </head>
 
 <body>
@@ -60,7 +64,9 @@ if (isset($_POST["masuk"])) {
 
             <br>
             <br>
-            <button class="btn"> <a href="registrasi.php" class="btn"> Register</a></button>
+            <button class="btn" type="reset" onclick="location.href='registrasi.php'">
+                Sign Up
+            </button>
         </form>
 
     </div>

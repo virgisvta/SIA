@@ -13,7 +13,7 @@ if (hapus($nim) > 0) {
     echo "
     <script>
         alert('data berhasil dihapus');
-        document.location.href = 'index.php';
+        document.location.href = 'mahasiswa.php';
     </script>
 
 
@@ -23,6 +23,6 @@ if (hapus($nim) > 0) {
     // mysqli_error($con);
     "<script>
     alert('data gagal dihapus');
-    document.location.href = 'index.php';
+    document.location.href = 'mahasiswa.php';
     </script>";
 }

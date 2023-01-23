@@ -16,7 +16,9 @@ require "function.php"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Menyisipkan JQuery dan Javascript Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -38,6 +40,11 @@ require "function.php"
         <h1>Welcome to SKEMA !</h1>
         <p style="font-size: 16px; text-align: center; font-family: 'Courier New', Courier, monospace;">Sistem Kepo Mahasiswa</p>
     </div>
+    <div class="footer">
+        <p>Copyright &copy; 2022</p>
+    </div>
 </body>
+
+
 
 </html>

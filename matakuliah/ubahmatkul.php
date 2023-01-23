@@ -49,22 +49,22 @@ if (isset($_POST["submit"])) {
         <nav>
             <ul class="nav_links">
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="#">Mahasiswa</a></li>
-                <li><a href="#">Dosen</a></li>
-                <li><a href="#">Jurusan</a></li>
-                <li><a href="#">Matakuliah</a></li>
+                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
+                <li><a href="../dosen/dosen.php">Dosen</a></li>
+                <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
         <a href="#"><button class="btn2">Logout</button></a>
     </header>
     <div class="cntr px-5">
         <h1> Update Data Mahasiswa</h1>
-        </div>
+    </div>
     <div class="mt-4 mb-5 px-4">
         <form action="" method="POST">
             <div class="form-control">
-            <ul>
-                
+                <ul>
+
                     <label for="nama_matkul">Nama Matakuliah :</label><br>
                     <input type="text" name="nama_matkul" id="nama_matkul" value="<?= $matkul["nama_matkul"];  ?>">
                     <br>
@@ -83,18 +83,17 @@ if (isset($_POST["submit"])) {
                         <option value="Jumat">Jumat</option>
                         <option value="Sabtu">Sabtu</option>
                     </select><br><br>
-                <button class="btn btn-dark" submit" name="submit">Update Data</button>
-            </ul>
+                    <button class="btn btn-dark" submit" name="submit">Update Data</button>
+                </ul>
 
-
+            </div>
         </form>
-    </div>
-    </div>
-    </section>
 
-    <!-- <footer> -->
-    <!-- <p>Copyright &copy; 2022</p>
-    </footer> -->
+    </div>
+    <div class="footer text-center">
+        <p>Copyright &copy; 2022</p>
+    </div>
+
 
 </body>
 

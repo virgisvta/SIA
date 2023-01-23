@@ -38,12 +38,12 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-<header>
+    <header>
         <img class="logo" src="../assets/skema.png" alt="logo">
         <nav>
             <ul class="nav_links">
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="#">Mahasiswa</a></li>
+                <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
                 <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
@@ -58,51 +58,45 @@ if (isset($_POST["submit"])) {
         <form action="" method="POST">
             <div class="form-control">
                 <ul>
-            <!-- <li> -->
-                <label for="nim">NIM :</label><br>
-                <input type="number" name="nim" id="nim" required>
-                <br>
-            <!-- </li>
-            <li> -->
-                <label for="nama_mhs">Nama :</label> <br>
-                <input type="text" name="nama_mhs" id="nama_mhs">
-                <br>
-            <!-- </li>
-            <li> -->
-                <label>Kode Jurusan :</label><br>
-                <select name="kode_jurusan">
-                    <option value="J01">Sistem Komputer</option>
-                    <option value="J02">Sistem Informasi</option>
-                    <option value="J03">Bisnis Digital</option>
-                </select><br>
-            <!-- </li>
-            <li> -->
-                <label>Gender :</label><br>
-                <input type="radio" name="gender" value="0"> Perempuan
-                <input type="radio" name="gender" value="1"> Laki-laki
-                <br>
-            <!-- </li>
-            <li> -->
-                <label for="alamat">Alamat :</label><br>
-                <input type="text" name="alamat" id="alamat">
-                <br>
-            <!-- </li>
-            <li> -->
-                <label for="no_hp">No HP :</label><br>
-                <input type="number" name="no_hp" id="no_hp">
-                <br>
-            <!-- </li>
-            <li> -->
-                <label for="email">Email :</label><br>
-                <input type="email" name="email" id="email">
-                <br>
-            <!-- </li> -->
-            <br>
-            <button type="submit" name="submit">Tambah Data</button>
-        </ul>
+
+                    <label for="nim">NIM :</label><br>
+                    <input type="number" name="nim" id="nim" required>
+                    <br>
+
+                    <label for="nama_mhs">Nama :</label> <br>
+                    <input type="text" name="nama_mhs" id="nama_mhs" required>
+                    <br>
+
+                    <label>Kode Jurusan :</label><br>
+                    <select name="kode_jurusan" required>
+                        <option value="J01">Sistem Komputer</option>
+                        <option value="J02">Sistem Informasi</option>
+                        <option value="J03">Bisnis Digital</option>
+                    </select>
+                    <br>
+
+                    <label>Gender :</label><br>
+                    <input type="radio" name="gender" value="0"> Perempuan
+                    <input type="radio" name="gender" value="1"> Laki-laki
+                    <br>
+                    <label for="alamat">Alamat :</label><br>
+                    <input type="text" name="alamat" id="alamat">
+                    <br>
+                    <label for="no_hp">No HP :</label><br>
+                    <input type="number" name="no_hp" id="no_hp" required>
+                    <br>
+                    <label for="email">Email :</label><br>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                    <br>
+                    <button class="btn btn-dark" type="submit" name="submit">Tambah Data</button>
+                </ul>
 
 
-    </form>
+        </form>
+    </div>
+    <div class="footer text-center">
+        <p>Copyright &copy; 2022</p>
     </div>
 </body>
 

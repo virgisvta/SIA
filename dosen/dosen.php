@@ -12,7 +12,7 @@ require '../function.php';
 $dsn = query("SELECT * FROM data_dosen ");
 function search($keyword)
 {
-    $query = "SELECT * FROM data_dsn WHERE nama_dsn LIKE '%" . $keyword . "%'";
+    $query = "SELECT * FROM data_dosen WHERE nama_dsn LIKE '%" . $keyword . "%'";
     return query($query);
 }
 
@@ -108,6 +108,9 @@ if (isset($_POST["cari"])) {
                     </tr>
                 <?php endforeach; ?>
             </table>
+        </div>
+        <div class="footer text-center">
+            <p>Copyright &copy; 2022</p>
         </div>
 
 </body>

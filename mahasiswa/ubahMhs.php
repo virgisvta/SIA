@@ -60,55 +60,49 @@ if (isset($_POST["submit"])) {
     </header>
     <h1 class="cntr px-5"> Tambah Data Mahasiswa</h1>
     <div class="mt-4 mb-5 px-4">
-                <form action="" method="POST">
-                    <div class="form-control"><!-- <div class="container"> -->
-                        <ul>
-                            <label for="nim">NIM :</label><br>
-                            <input type="number" name="nim" id="nim" required value="<?= $mhs["nim"];  ?>" readonly> <br>
-                            <label for="nama_mhs">Nama :</label> <br>
-                            <input type="text" name="nama_mhs" id="nama_mhs" value="<?= $mhs["nama_mhs"]; ?>">
-                            <br>
-                            <label>Kode Jurusan :</label><br>
-                            <select name="kode_jurusan">
-                                <option value="J01">Sistem Komputer</option>
-                                <option value="J02">Sistem Informasi</option>
-                                <option value="J03">Bisnis Digital</option>
-                            </select><br>
+        <form action="" method="POST">
+            <div class="form-control">
+                <ul>
+                    <label for="nim">NIM :</label><br>
+                    <input type="number" name="nim" id="nim" required value="<?= $mhs["nim"];  ?>" readonly> <br>
+                    <label for="nama_mhs">Nama :</label> <br>
+                    <input type="text" name="nama_mhs" id="nama_mhs" value="<?= $mhs["nama_mhs"]; ?>">
+                    <br>
+                    <label>Kode Jurusan :</label><br>
+                    <select name="kode_jurusan">
+                        <option value="J01">Sistem Komputer</option>
+                        <option value="J02">Sistem Informasi</option>
+                        <option value="J03">Bisnis Digital</option>
+                    </select><br>
 
-                            <label>Gender :</label><br>
-                            <?php
-                            if ($mhs['gender'] == 0) {
-                            ?>
-                                <input type="radio" name="gender" value="0" checked> Perempuan
-                                <input type="radio" name="gender" value="1"> Laki-laki
-                            <?php } else { ?>
-                                <input type="radio" name="gender" value="0"> Perempuan
-                                <input type="radio" name="gender" value="1" checked> Laki-laki
-                            <?php } ?>
-                            <br>
-                            <label for="alamat">Alamat :</label><br>
-                            <input type="text" name="alamat" id="alamat" value="<?= $mhs["alamat"]; ?>">
-                            <br>
-                            <label for=" no_hp">No HP :</label><br>
-                            <input type="number" name="no_hp" id="no_hp" value="<?= $mhs["no_hp"]; ?>">
-                            <br>
-                            <label for=" email">Email :</label><br>
-                            <input type="email" name="email" id="email" value="<?= $mhs["email"]; ?>">
-                            <br><br>
-                            <button type="submit" name="submit" class="btn btn-dark">Update Data</button>
-                        </ul>
+                    <label>Gender :</label><br>
+                    <?php
+                    if ($mhs['gender'] == 0) {
+                    ?>
+                        <input type="radio" name="gender" value="0" checked> Perempuan
+                        <input type="radio" name="gender" value="1"> Laki-laki
+                    <?php } else { ?>
+                        <input type="radio" name="gender" value="0"> Perempuan
+                        <input type="radio" name="gender" value="1" checked> Laki-laki
+                    <?php } ?>
+                    <br>
+                    <label for="alamat">Alamat :</label><br>
+                    <input type="text" name="alamat" id="alamat" value="<?= $mhs["alamat"]; ?>">
+                    <br>
+                    <label for=" no_hp">No HP :</label><br>
+                    <input type="number" name="no_hp" id="no_hp" value="<?= $mhs["no_hp"]; ?>">
+                    <br>
+                    <label for=" email">Email :</label><br>
+                    <input type="email" name="email" id="email" value="<?= $mhs["email"]; ?>">
+                    <br><br>
+                    <button type="submit" name="submit" class="btn btn-dark">Update Data</button>
+                </ul>
 
-
-                </form>
             </div>
-            <div class="col position-absolute top-70 start-30 translate-middle">
-                Column2
-            </div>
-            <!-- <div class="col">
-      Column
-    </div> -->
-        </div>
+        </form>
     </div>
+    <div class="footer text-center">
+        <p>Copyright &copy; 2022</p>
     </div>
 
 </body>

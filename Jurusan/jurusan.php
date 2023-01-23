@@ -97,6 +97,9 @@ if (isset($_POST["cari"])) {
                 <?php endforeach; ?>
             </table>
         </div>
+        <div class="footer text-center">
+            <p>Copyright &copy; 2022</p>
+        </div>
 </body>
 
 </html>

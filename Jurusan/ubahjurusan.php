@@ -75,6 +75,9 @@ if (isset($_POST["submit"])) {
 
         </form>
     </div>
+    <div class="footer text-center">
+        <p>Copyright &copy; 2022</p>
+    </div>
 </body>
 
 </html>

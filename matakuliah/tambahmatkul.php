@@ -46,7 +46,7 @@ if (isset($_POST["submit"])) {
                 <li><a href="../mahasiswa/mahasiswa.php">Mahasiswa</a></li>
                 <li><a href="../dosen/dosen.php">Dosen</a></li>
                 <li><a href="../jurusan/jurusan.php">Jurusan</a></li>
-                <li><a href="#">Matakuliah</a></li>
+                <li><a href="../matakuliah/matakuliah.php">Matakuliah</a></li>
             </ul>
         </nav>
         <a href="../logout.php"><button class="btn2">Logout</button></a>
@@ -58,19 +58,19 @@ if (isset($_POST["submit"])) {
         <form action="" method="POST">
             <div class="form-control">
                 <ul>
-                
+
                     <label for="nama_matkul">Nama Matakuliah:</label> <br>
                     <input type="text" name="nama_matkul" id="nama_matkul">
                     <br>
-                
+
                     <label for="nidn">NIDN Dosen Matakuliah :</label><br>
                     <input type="text" name="nidn" id="nidn">
                     <br>
-                
+
                     <label for="waktu">Waktu :</label><br>
                     <input type="time" name="waktu" id="waktu">
                     <br>
-                
+
                     <label>Hari :</label><br>
                     <select name="hari">
                         <option value="Senin">Senin</option>
@@ -80,13 +80,15 @@ if (isset($_POST["submit"])) {
                         <option value="Jumat">Jumat</option>
                         <option value="Sabtu">Sabtu</option>
                     </select><br><br>
-                <button class="btn btn-dark" type="submit" name="submit">Tambah Data</button>
-            </ul>
+                    <button class="btn btn-dark" type="submit" name="submit">Tambah Data</button>
+                </ul>
 
 
         </form>
     </div>
-
+    <div class="footer text-center">
+        <p>Copyright &copy; 2022</p>
+    </div>
 
 </body>
 

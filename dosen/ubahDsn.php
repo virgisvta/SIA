@@ -101,9 +101,9 @@ if (isset($_POST["submit"])) {
         </form>
 
     </div>
-    <!-- <footer>
+    <div class="footer text-center">
         <p>Copyright &copy; 2022</p>
-    </footer> -->
+    </div>
 
 </body>
 

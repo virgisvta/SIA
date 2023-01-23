@@ -8,7 +8,7 @@ if (!isset($_SESSION["masuk"])) {
 
 require '../function.php';
 
-$matakuliah = query("SELECT * FROM data_matkul ");
+$matakuliah = query("SELECT * FROM data_dosen LEFT JOIN data_matkul ON data_dosen.nidn = data_matkul.nidn");
 function search($keyword)
 {
     $query = "SELECT * FROM data_matkul WHERE nama_matkul LIKE '%" . $keyword . "%'";
@@ -84,7 +84,7 @@ if (isset($_POST["cari"])) {
                             <?= $row["nama_matkul"]; ?>
                         </td>
                         <td>
-                            <?= $row["nidn"]; ?>
+                            <?= $row["nama_dsn"]; ?>
                         </td>
                         <td>
                             <?= $row["waktu"]; ?>
@@ -100,6 +100,12 @@ if (isset($_POST["cari"])) {
                 <?php endforeach; ?>
             </table>
         </div>
+
+    </div>
+    <div class="footer text-center">
+        <p>Copyright &copy; 2022</p>
+    </div>
+
 
 </body>
 
